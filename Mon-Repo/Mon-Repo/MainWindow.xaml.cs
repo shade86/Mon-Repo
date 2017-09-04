@@ -24,5 +24,29 @@ namespace Mon_Repo
         {
             InitializeComponent();
         }
+
+        private void PasswordTextBoxClick(object sender, RoutedEventArgs e)
+        {
+            if (PasswordTextBox.Text == "Jelszó")
+            PasswordTextBox.Text = "";
+        }
+
+        private void PasswordTextBoxUnclick(object sender, RoutedEventArgs e)
+        {
+            if (PasswordTextBox.Text == "")
+                PasswordTextBox.Text = "Jelszó";
+        }
+
+        private void UserTextBoxClick(object sender, RoutedEventArgs e)
+        {
+            if (UserTextBox.Text == "Felhasználó")
+            UserTextBox.Text = "";
+        }
+
+        private void UserTextBoxUnclick(object sender, RoutedEventArgs e)
+        {
+            if (UserTextBox.Text == "")
+                UserTextBox.Text = "Felhasználó";
+        }
     }
 }

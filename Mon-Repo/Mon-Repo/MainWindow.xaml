@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="330" Width="525">
     <Grid>
-        
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="208,133,209,142" TextWrapping="Wrap" Text="Jelszó" Width="100" GotFocus="PasswordTextBoxClick" LostFocus="PasswordTextBoxUnclick"/>
+        <TextBox x:Name="UserTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="208,109,209,166" TextWrapping="Wrap" Text="Felhasználó" Width="100" GotFocus="UserTextBoxClick" LostFocus="UserTextBoxUnclick"/>
     </Grid>
 </Window>
