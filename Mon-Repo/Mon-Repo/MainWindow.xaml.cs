@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -25,28 +26,24 @@ namespace Mon_Repo
             InitializeComponent();
         }
 
-        private void PasswordTextBoxClick(object sender, RoutedEventArgs e)
+        private void PasswordKeyDown(object sender, KeyEventArgs e)
         {
-            if (PasswordTextBox.Text == "Jelszó")
-            PasswordTextBox.Text = "";
-        }
-
-        private void PasswordTextBoxUnclick(object sender, RoutedEventArgs e)
-        {
-            if (PasswordTextBox.Text == "")
-                PasswordTextBox.Text = "Jelszó";
-        }
-
-        private void UserTextBoxClick(object sender, RoutedEventArgs e)
-        {
-            if (UserTextBox.Text == "Felhasználó")
-            UserTextBox.Text = "";
-        }
-
-        private void UserTextBoxUnclick(object sender, RoutedEventArgs e)
-        {
-            if (UserTextBox.Text == "")
-                UserTextBox.Text = "Felhasználó";
+            if (Keyboard.GetKeyStates(Key.CapsLock) == KeyStates.Toggled)
+            {
+                ToolTip CapsSign = new ToolTip();
+                CapsSign.Content = "A Caps Lock be van kapcsolva!";
+                CapsSign.Placement = PlacementMode.Bottom;
+                CapsSign.PlacementTarget = sender as UIElement;
+              
+              
+                PasswordBox.ToolTip = CapsSign;
+                CapsSign.IsOpen = true;
+            }
+            else
+            {
+               
+                    PasswordBox.ToolTip = null;
+            }
         }
     }
 }

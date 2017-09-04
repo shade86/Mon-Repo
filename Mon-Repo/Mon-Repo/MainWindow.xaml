@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="330" Width="525">
     <Grid>
-        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="208,133,209,142" TextWrapping="Wrap" Text="Jelszó" Width="100" GotFocus="PasswordTextBoxClick" LostFocus="PasswordTextBoxUnclick"/>
-        <TextBox x:Name="UserTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="208,109,209,166" TextWrapping="Wrap" Text="Felhasználó" Width="100" GotFocus="UserTextBoxClick" LostFocus="UserTextBoxUnclick"/>
+        <TextBox x:Name="UserTextBox" BorderBrush="Black" VerticalContentAlignment="Center" TextAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="0,-53,0,0" TextWrapping="Wrap" Text="" Width="100" BorderThickness="1"/>
+        <PasswordBox x:Name="PasswordBox" BorderBrush="Black" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="100" ToolTip="Jelszó" Margin="0, 0,0,0" KeyDown="PasswordKeyDown"/>
+        <Label x:Name="UserLabel" Content="Felhasználó:" HorizontalAlignment="Left" Height="24" Margin="121,111,0,0" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="PasswordLabel" Content="Jelszó:" HorizontalAlignment="Left" Height="24" Margin="121,138,0,0" VerticalAlignment="Top" Width="83"/>
     </Grid>
 </Window>
