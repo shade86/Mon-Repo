@@ -29,7 +29,7 @@ namespace Mon_Repo
         {
             var vm = new ProductFormViewModel
                 {
-                Product = ((MainViewModel)DataContext).SelectedProduct
+                Product = new Product()
                 };
             var form = new ProductForm()
             {

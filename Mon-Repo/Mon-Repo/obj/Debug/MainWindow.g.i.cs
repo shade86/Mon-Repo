@@ -72,6 +72,14 @@ namespace Mon_Repo {
         #line default
         #line hidden
         
+        
+        #line 14 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button SignInButton;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -119,6 +127,15 @@ namespace Mon_Repo {
             return;
             case 4:
             this.PasswordLabel = ((System.Windows.Controls.Label)(target));
+            return;
+            case 5:
+            this.SignInButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 14 "..\..\MainWindow.xaml"
+            this.SignInButton.Click += new System.Windows.RoutedEventHandler(this.SignInClick);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

@@ -13,9 +13,11 @@ namespace Mon_Repo
         public Product SelectedProduct { get; set; }
         public MainViewModel()
         {
+            Products = new ObservableCollection<Product>
+            {
             new Product { Name = "Kenyér", Price = 10 },
             new Product { Name = "Tej", Price = 20 }
-            
+            };
         }
     }
 }

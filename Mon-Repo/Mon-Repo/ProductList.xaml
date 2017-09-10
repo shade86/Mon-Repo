@@ -7,7 +7,16 @@
         mc:Ignorable="d"
         Title="ProductList" Height="300" Width="589.13">
     <Grid>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="250" Margin="116,10,0,0" VerticalAlignment="Top" Width="456"/>
+        <ListBox x:Name="listBox" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="250" Margin="116,10,0,0" VerticalAlignment="Top" Width="456">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Name}"/>
+                        <Label Content="{Binding Price}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="button" Content="Termék feltöltése" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="101" Click="NewProductClick"/>
 
     </Grid>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mon_Repo
 {
-    public class Product
+    public class Product : BaseModel
     {
         string _name;
         public string Name

@@ -23,5 +23,13 @@ namespace Mon_Repo
         {
             InitializeComponent();
         }
+
+        private void SaveProductClick(object sender, RoutedEventArgs e)
+        {
+            if (((ProductFormViewModel)DataContext).Validate())
+                Close();
+            else
+                MessageBox.Show("Hiba! Ár > 0, megnevezés > 4!");
+        }
     }
 }

@@ -11,5 +11,6 @@
         <PasswordBox x:Name="PasswordBox" BorderBrush="Black" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="100" ToolTip="Jelszó" Margin="0, 0,0,0" KeyDown="PasswordKeyDown"/>
         <Label x:Name="UserLabel" Content="Felhasználó:" HorizontalAlignment="Left" Height="24" Margin="121,111,0,0" VerticalAlignment="Top" Width="83"/>
         <Label x:Name="PasswordLabel" Content="Jelszó:" HorizontalAlignment="Left" Height="24" Margin="121,138,0,0" VerticalAlignment="Top" Width="83"/>
+        <Button x:Name="SignInButton" Content="Belépés" HorizontalAlignment="Left" Height="28" Margin="224,182,0,0" VerticalAlignment="Top" Width="70" Click="SignInClick"/>
     </Grid>
 </Window>

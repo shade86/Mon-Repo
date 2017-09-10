@@ -45,5 +45,21 @@ namespace Mon_Repo
                     PasswordBox.ToolTip = null;
             }
         }
+
+        private void SignInClick(object sender, RoutedEventArgs e)
+        {
+            /* Belépés gomb után a productlist megnyitása ================================
+            var vm = new ProductFormViewModel
+            {
+                Product = new Product()
+            };
+            var form = new ProductForm()
+            {
+                DataContext = vm
+            };
+            form.ShowDialog();
+            if (vm.Validate())
+                ((MainViewModel)DataContext).Products.Add(vm.Product);*/
+        }
     }
 }
