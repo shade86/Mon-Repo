@@ -12,8 +12,17 @@ namespace Mon_Repo
         public bool Validate()
         {
             return Product.Name != null &&
-                Product.Name.Length > 4 &&
-                Product.Price > 0;
+                Product.Name.Length > 0 &&
+                Product.Price > -1;
+        }
+        public bool IsEdit { get; set; }
+
+        public bool OnWindowClosing()
+        {
+            return
+           IsEdit == true
+                &&
+                Validate() != true;
         }
     }
 }

@@ -29,7 +29,16 @@ namespace Mon_Repo
             if (((ProductFormViewModel)DataContext).Validate())
                 Close();
             else
-                MessageBox.Show("Hiba! Ár > 0, megnevezés > 4!");
+                MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");
+        }
+
+        private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = ((ProductFormViewModel)DataContext).OnWindowClosing();
+            if ((((ProductFormViewModel)DataContext).OnWindowClosing() == true))
+                MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");
+
+
         }
     }
 }
