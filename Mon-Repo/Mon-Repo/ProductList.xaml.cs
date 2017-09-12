@@ -38,7 +38,7 @@ namespace Mon_Repo
             form.ShowDialog();
             if (vm.Validate())
                 ((MainViewModel)DataContext).Products.Add(vm.Product);
-
+           
         }
     }
 }
