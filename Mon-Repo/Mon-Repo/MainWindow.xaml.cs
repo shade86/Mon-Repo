@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,8 +24,10 @@ namespace Mon_Repo
     /// </summary>
     public partial class MainWindow : Window
     {
+        const string FileName = @"C:\1\Users.txt";
         public MainWindow()
         {
+
             InitializeComponent();
         }
 
@@ -44,6 +49,31 @@ namespace Mon_Repo
                
                     PasswordBox.ToolTip = null;
             }
+        }
+
+        private void SignInClick(object sender, RoutedEventArgs e)
+        {
+            // BELÉPÉS USERNAME CHECK, egyelőre nem működik rendesen
+            StringCollection UserSearch = new StringCollection();
+            UserSearch.Add(UserTextBox.Text);
+
+
+            StreamReader FileReader = new StreamReader(FileName);
+            string FileContents;
+            FileContents = FileReader.ReadToEnd();
+            FileReader.Close();
+            foreach (string s in UserSearch)
+            {
+                if (FileContents.Contains(s))
+                    MessageBox.Show("Sikeres belépés");
+                var signin = new ProductList();
+                Close();
+                signin.ShowDialog();
+            }
+            
+        
+
+                  
         }
     }
 }
