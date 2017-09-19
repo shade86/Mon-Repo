@@ -24,56 +24,68 @@ namespace Mon_Repo
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string FileName = @"C:\1\Users.txt";
         public MainWindow()
         {
-
             InitializeComponent();
+            DataContext = new MainViewModel();
+            var lvm = new LoginViewModel();
+            var lw = new LoginWindow()
+            {
+                DataContext = lvm
+            };
+            lw.ShowDialog();
         }
 
-        private void PasswordKeyDown(object sender, KeyEventArgs e)
+        void NewProductClick(object sender, RoutedEventArgs e)
         {
-            if (Keyboard.GetKeyStates(Key.CapsLock) == KeyStates.Toggled)
+            var vm = new ProductFormViewModel
             {
-                ToolTip CapsSign = new ToolTip();
-                CapsSign.Content = "A Caps Lock be van kapcsolva!";
-                CapsSign.Placement = PlacementMode.Bottom;
-                CapsSign.PlacementTarget = sender as UIElement;
-              
-              
-                PasswordBox.ToolTip = CapsSign;
-                CapsSign.IsOpen = true;
-            }
-            else
+                Product = new Product()
+            };
+            var form = new ProductForm()
             {
-               
-                    PasswordBox.ToolTip = null;
-            }
+                DataContext = vm
+            };
+            form.ShowDialog();
+            if (vm.Validate())
+                ((MainViewModel)DataContext).Products.Add(vm.Product);
         }
 
-        private void SignInClick(object sender, RoutedEventArgs e)
+        private void EditProductClick(object sender, RoutedEventArgs e)
         {
-            // BELÉPÉS USERNAME CHECK, egyelőre nem működik rendesen
-            StringCollection UserSearch = new StringCollection();
-            UserSearch.Add(UserTextBox.Text);
-
-
-            StreamReader FileReader = new StreamReader(FileName);
-            string FileContents;
-            FileContents = FileReader.ReadToEnd();
-            FileReader.Close();
-            foreach (string s in UserSearch)
+            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
+            if (SelectedProduct == null)
             {
-                if (FileContents.Contains(s))
-                    MessageBox.Show("Sikeres belépés");
-                var signin = new ProductList();
-                Close();
-                signin.ShowDialog();
+                return;
             }
-            
-        
+            var vm = new ProductFormViewModel
 
-                  
+            {
+                IsEdit = true,
+                Product = ((MainViewModel)DataContext).SelectedProduct
+            };
+            var form = new ProductForm()
+            {
+                DataContext = vm
+            };
+            form.ShowDialog();
+
+        }
+
+        private void DeleteProductClick(object sender, RoutedEventArgs e)
+        {
+            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
+            if (SelectedProduct == null)
+            {
+                return;
+            }
+            var vm = new ProductFormViewModel
+
+            {
+
+                Product = ((MainViewModel)DataContext).SelectedProduct
+            };
+            ((MainViewModel)DataContext).Products.Remove(vm.Product);
         }
     }
 }
