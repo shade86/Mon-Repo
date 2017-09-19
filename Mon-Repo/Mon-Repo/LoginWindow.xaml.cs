@@ -19,17 +19,17 @@ namespace Mon_Repo
     /// </summary>
     public partial class LoginWindow : Window
     {
-       public LoginViewModel ViewModel { get; }
+        LoginViewModel ViewModel = new LoginViewModel();
         public LoginWindow()
         {
             InitializeComponent();
-            ViewModel = new LoginViewModel();
+            
             DataContext = ViewModel;
         }
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             ViewModel.LoginPassword = PasswordTextBox.Password;
-            if (!ViewModel.Login())
+            if (ViewModel.Login())
                 Close();
             else
                 MessageBox.Show("HIBA");
@@ -37,7 +37,7 @@ namespace Mon_Repo
 
         private void LoginWindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (ViewModel.Login())
+            if (!ViewModel.Login())
                 e.Cancel = true;
         }
     }

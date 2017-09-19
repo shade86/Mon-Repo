@@ -24,16 +24,19 @@ namespace Mon_Repo
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel _vm = new MainViewModel();
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-            var lvm = new LoginViewModel();
-            var lw = new LoginWindow()
-            {
-                DataContext = lvm
-            };
+            //  DataContext = new MainViewModel();
+            // var lvm = new LoginViewModel();
+            LoginWindow lw = new LoginWindow();
+          /*  {
+               DataContext = lvm
+            };*/
             lw.ShowDialog();
+            _vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
+            DataContext = _vm;
         }
 
         void NewProductClick(object sender, RoutedEventArgs e)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mon_Repo
 {
-    public class LoginViewModel : BaseModel
+    class LoginViewModel : BaseModel
     {
         public ObservableCollection<User> Users { get; set; }
         public string LoginName { get; set; }

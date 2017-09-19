@@ -11,6 +11,7 @@ namespace Mon_Repo
     {
         public ObservableCollection<Product> Products { get; set; }
         public Product SelectedProduct { get; set; }
+        public User AuthenticatedUser { get; set; }
         public MainViewModel()
         {
             Products = new ObservableCollection<Product>
