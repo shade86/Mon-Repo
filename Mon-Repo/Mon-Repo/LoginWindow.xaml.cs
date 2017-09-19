@@ -28,11 +28,17 @@ namespace Mon_Repo
         }
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.Password = PasswordTextBox.Password;
-            if (ViewModel.Login())
+            ViewModel.LoginPassword = PasswordTextBox.Password;
+            if (!ViewModel.Login())
                 Close();
             else
                 MessageBox.Show("HIBA");
+        }
+
+        private void LoginWindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (ViewModel.Login())
+                e.Cancel = true;
         }
     }
 }

@@ -21,13 +21,11 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon-Repo.csprojResolveAssemblyReference.cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\MainWindow.g.cs
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductForm.g.cs
-C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductList.g.cs
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\App.g.cs
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon-Repo_MarkupCompile.cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon-Repo_MarkupCompile.lref
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\MainWindow.baml
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductForm.baml
-C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductList.baml
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon-Repo.g.resources
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon_Repo.Properties.Resources.resources
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon-Repo.csproj.GenerateResource.Cache
@@ -35,3 +33,5 @@ C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindo
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductForm.g.cs
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindow.baml
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductForm.baml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindow.g.cs
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindow.baml

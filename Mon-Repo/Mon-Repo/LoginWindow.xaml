@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Repo"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="300" Width="300">
+        Title="LoginWindow" Height="300" Width="300" Closing="LoginWindowClosing">
     <Grid>
         <Label Content="Username:" HorizontalAlignment="Left" Height="27" Margin="10,20,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Password:" HorizontalAlignment="Left" Height="27" Margin="10,52,0,0" VerticalAlignment="Top" Width="113"/>

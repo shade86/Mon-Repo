@@ -9,27 +9,30 @@ namespace Mon_Repo
 {
     public class LoginViewModel : BaseModel
     {
-        public List<User> Users { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public ObservableCollection<User> Users { get; set; }
+        public string LoginName { get; set; }
+        public string LoginPassword { get; set; }
         public User AuthenticatedUser { get; set; }
         public LoginViewModel()
         {
 
-            Users = new List<User>
+            Users = new ObservableCollection<User>
             {
-                new User {Username = "asdf", Password = "1234", Money = 1000}
+                new User {Username = "asdf", Password = "1234", Money = 1000},
+                new User {Username = "Tomi", Password = "1234", Money = 200 }
             };
         }
         public bool Login()
         {
             foreach (var user in Users)
-                if (user.Username == Username && user.Password == Password)
+            {
+                if (user.Username == LoginName && user.Password == LoginPassword)
                 {
 
                     AuthenticatedUser = user;
                     return true;
                 }
+            }
             return false;
         }
 
