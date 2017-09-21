@@ -18,8 +18,8 @@ namespace Mon_Repo
 
             Users = new ObservableCollection<User>
             {
-                new User {Username = "asdf", Password = "1234", Money = 1000},
-                new User {Username = "Tomi", Password = "1234", Money = 200 }
+                new User {Username = "asdf", Password = "1234", Money = 1000, ProductList= new ObservableCollection<Product>()},
+                new User {Username = "Tomi", Password = "1234", Money = 200, ProductList= new ObservableCollection<Product>()}
             };
         }
         public bool Login()

@@ -10,24 +10,24 @@
         <Button Content="New" HorizontalAlignment="Left" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="77" Click="NewProductClick"/>
         <Button Content="Edit" HorizontalAlignment="Left" Height="30" Margin="0,45,0,0" VerticalAlignment="Top" Width="77" Click="EditProductClick"/>
         <Button Content="Delete" HorizontalAlignment="Left" Height="30" Margin="0,80,0,0" VerticalAlignment="Top" Width="77" Click="DeleteProductClick"/>
-        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="299" Margin="82,10,0,0" VerticalAlignment="Top" Width="189">
+        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="299" Margin="82,10,0,0" VerticalAlignment="Top" Width="189" MouseDoubleClick="BuyProduct">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding Name}"/>
-                        <Label Content="{Binding Price}"/>
-                        <Label Content="{Binding Quantity}"/>
+                        <Label Content="{Binding Name}" ContentStringFormat="Termék megnevezése: {0}"/>
+                        <Label Content="{Binding Price}" ContentStringFormat="Termék ára: 0 Ft"/>
+                        <Label Content="{Binding Quantity}" ContentStringFormat="Mennyiség: 0 db"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="299" Margin="318,10,0,0" VerticalAlignment="Top" Width="189">
+        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="299" Margin="318,10,0,0" VerticalAlignment="Top" Width="189">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding Name}"/>
-                        <Label Content="{Binding Price}"/>
-                        <Label Content="{Binding Quantity}"/>
+                        <Label Content="{Binding Name}" ContentStringFormat="Termék megnevezése: {0}"/>
+                        <Label Content="{Binding Price}" ContentStringFormat="Termék ára: 0 Ft"/>
+                        <Label Content="{Binding Quantity}" ContentStringFormat="Mennyiség: 0 db"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

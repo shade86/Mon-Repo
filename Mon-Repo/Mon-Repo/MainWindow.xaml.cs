@@ -90,5 +90,17 @@ namespace Mon_Repo
             };
             ((MainViewModel)DataContext).Products.Remove(vm.Product);
         }
+
+        private void BuyProduct(object sender, MouseButtonEventArgs e)
+        {
+            if (_vm.SelectedProduct != null)
+            {
+                if (_vm.SelectedProduct.Price > _vm.AuthenticatedUser.Money)
+                    MessageBox.Show("Nincs elég pénz!");
+                else if (_vm.SelectedProduct.Quantity == 0)
+                    MessageBox.Show("A termék elfogyott");
+                else _vm.AddCart();
+            }
+        }
     }
 }
