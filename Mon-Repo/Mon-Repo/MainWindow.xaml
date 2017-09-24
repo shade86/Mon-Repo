@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="1024">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7F6CFF" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button Content="Új termék feltöltése" HorizontalAlignment="Left" Height="30" Margin="10,82,0,0" VerticalAlignment="Top" Width="132" Click="NewProductClick"/>
         <Button Content="Termék szerkesztése" HorizontalAlignment="Left" Height="30" Margin="10,117,0,0" VerticalAlignment="Top" Width="132" Click="EditProductClick"/>
         <Button Content="Termék törlése" HorizontalAlignment="Left" Height="30" Margin="10,152,0,0" VerticalAlignment="Top" Width="132" Click="DeleteProductClick"/>
@@ -36,7 +42,7 @@
         <Label Content="Megvásárolható termékek:" HorizontalAlignment="Left" Margin="147,45,0,0" VerticalAlignment="Top" Width="350"/>
         <Label Content="Kosár tartalma:" HorizontalAlignment="Left" Margin="542,45,0,0" VerticalAlignment="Top" Width="350"/>
         <Label Content="Felhasználó:" HorizontalAlignment="Left" Margin="779,10,0,0" VerticalAlignment="Top" Width="86"/>
-        <Label Content="Kijelentkezés" Foreground="Blue" HorizontalAlignment="Left" Margin="922,10,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick"/>
+        <Label x:Name="LogoutLabel" Content="Kijelentkezés" Foreground="Blue" HorizontalAlignment="Left" Margin="922,10,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick"/>
         <Label Content="Pénztárca:" HorizontalAlignment="Left" Margin="779,36,0,0" VerticalAlignment="Top" Width="86"/>
         <Label Content="{Binding AuthenticatedUser.Money}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="855,36,0,0" VerticalAlignment="Top" Width="86"/>
 
