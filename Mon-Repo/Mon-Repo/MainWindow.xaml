@@ -21,7 +21,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="299" Margin="318,10,0,0" VerticalAlignment="Top" Width="189">
+        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="299" Margin="318,10,0,0" VerticalAlignment="Top" Width="189" MouseDoubleClick="CartDoubleClick" MouseUp="ClickUp">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

@@ -40,5 +40,10 @@ namespace Mon_Repo
             if (!ViewModel.Login())
                 e.Cancel = true;
         }
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

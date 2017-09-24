@@ -37,5 +37,19 @@ namespace Mon_Repo
             AuthenticatedUser.ProductList.Add(new Product { Name = SelectedProduct.Name, Price = SelectedProduct.Price, Quantity = 1 });
             AuthenticatedUser.Money -= SelectedProduct.Price;
         }
+        public void RemoveCart()
+        {
+            CartSelectedProduct.Quantity --; 
+            {
+                foreach (var item in Products)
+                {
+                    if (item.Name == CartSelectedProduct.Name)
+                    {
+                        item.Quantity++;
+                        AuthenticatedUser.Money += item.Price;
+                    }
+                }
+            }
+        }
     }
 }

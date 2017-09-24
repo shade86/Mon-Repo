@@ -102,5 +102,17 @@ namespace Mon_Repo
                 else _vm.AddCart();
             }
         }
+
+        private void CartDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            _vm.RemoveCart(); 
+        }
+
+        private void ClickUp(object sender, MouseButtonEventArgs e)
+        {
+            if (_vm.CartSelectedProduct != null && _vm.CartSelectedProduct.Quantity == 0)
+                _vm.AuthenticatedUser.ProductList.Remove(_vm.CartSelectedProduct);
+            return;
+        }
     }
 }
