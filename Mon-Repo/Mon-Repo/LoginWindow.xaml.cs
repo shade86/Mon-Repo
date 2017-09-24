@@ -60,5 +60,21 @@ namespace Mon_Repo
            myScaleTransform.ScaleX = 1;
            myScaleTransform.ScaleY = 1;
         }
+
+        private void UserTextChange(object sender, RoutedEventArgs e)
+        {
+          //  UserNameTextBox.Text = { Binding LoginName}
+        }
+
+        private void PasswordTextboxClick(object sender, RoutedEventArgs e)
+        {
+            PasswordTextBox.Password = "";
+        }
+
+        private void PasswordTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (PasswordTextBox.Password == "")
+            PasswordTextBox.Password = "Jelszó";
+        }
     }
 }
