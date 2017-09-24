@@ -45,5 +45,20 @@ namespace Mon_Repo
         {
             System.Windows.Application.Current.Shutdown();
         }
+        //BUTTON Animáció
+        private void ExitMouseEnter(object sender, MouseEventArgs e)
+        {
+         myScaleTransform.ScaleX = 2;
+            ExitButton.Content = "Quit";
+            ExitButton.FontSize =12;
+         myScaleTransform.ScaleY = 1;
+        }
+
+        //BUTTON Animáció
+        private void ExitMouseLeave(object sender, MouseEventArgs e)
+        {
+           myScaleTransform.ScaleX = 1;
+           myScaleTransform.ScaleY = 1;
+        }
     }
 }

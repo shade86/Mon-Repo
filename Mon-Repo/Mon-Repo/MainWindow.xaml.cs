@@ -114,5 +114,14 @@ namespace Mon_Repo
                 _vm.AuthenticatedUser.ProductList.Remove(_vm.CartSelectedProduct);
             return;
         }
+
+        private void LogoutClick(object sender, MouseButtonEventArgs e)
+        {
+            var mw = new MainWindow();
+            //DataContext = _vm;
+            Close();
+            mw.ShowDialog();
+            
+        }
     }
 }

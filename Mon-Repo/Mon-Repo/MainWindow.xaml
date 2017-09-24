@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Repo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="330" Width="525">
+        Title="MainWindow" Height="550" Width="1024">
     <Grid>
-        <Button Content="New" HorizontalAlignment="Left" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="77" Click="NewProductClick"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Height="30" Margin="0,45,0,0" VerticalAlignment="Top" Width="77" Click="EditProductClick"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="30" Margin="0,80,0,0" VerticalAlignment="Top" Width="77" Click="DeleteProductClick"/>
-        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="299" Margin="82,10,0,0" VerticalAlignment="Top" Width="189" MouseDoubleClick="BuyProduct">
+        <Button Content="Új termék feltöltése" HorizontalAlignment="Left" Height="30" Margin="10,82,0,0" VerticalAlignment="Top" Width="132" Click="NewProductClick"/>
+        <Button Content="Termék szerkesztése" HorizontalAlignment="Left" Height="30" Margin="10,117,0,0" VerticalAlignment="Top" Width="132" Click="EditProductClick"/>
+        <Button Content="Termék törlése" HorizontalAlignment="Left" Height="30" Margin="10,152,0,0" VerticalAlignment="Top" Width="132" Click="DeleteProductClick"/>
+        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="350" Margin="147,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="BuyProduct">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -21,7 +21,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="299" Margin="318,10,0,0" VerticalAlignment="Top" Width="189" MouseDoubleClick="CartDoubleClick" MouseUp="ClickUp">
+        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="350" Margin="542,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="CartDoubleClick" MouseUp="ClickUp">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -32,6 +32,13 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Label Content="{Binding AuthenticatedUser.Username}" HorizontalAlignment="Left" Margin="855,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Megvásárolható termékek:" HorizontalAlignment="Left" Margin="147,45,0,0" VerticalAlignment="Top" Width="350"/>
+        <Label Content="Kosár tartalma:" HorizontalAlignment="Left" Margin="542,45,0,0" VerticalAlignment="Top" Width="350"/>
+        <Label Content="Felhasználó:" HorizontalAlignment="Left" Margin="779,10,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label Content="Kijelentkezés" Foreground="Blue" HorizontalAlignment="Left" Margin="922,10,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick"/>
+        <Label Content="Pénztárca:" HorizontalAlignment="Left" Margin="779,36,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label Content="{Binding AuthenticatedUser.Money}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="855,36,0,0" VerticalAlignment="Top" Width="86"/>
 
     </Grid>
 </Window>
