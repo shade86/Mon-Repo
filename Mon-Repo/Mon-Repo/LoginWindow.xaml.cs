@@ -48,17 +48,17 @@ namespace Mon_Repo
         //BUTTON Animáció
         private void ExitMouseEnter(object sender, MouseEventArgs e)
         {
-         myScaleTransform.ScaleX = 2;
+     /*    myScaleTransform.ScaleX = 2;
             ExitButton.Content = "Quit";
             ExitButton.FontSize =12;
-         myScaleTransform.ScaleY = 1;
+         myScaleTransform.ScaleY = 1;*/
         }
 
         //BUTTON Animáció
         private void ExitMouseLeave(object sender, MouseEventArgs e)
         {
-           myScaleTransform.ScaleX = 1;
-           myScaleTransform.ScaleY = 1;
+      /*     myScaleTransform.ScaleX = 1;
+           myScaleTransform.ScaleY = 1;*/
         }
 
         private void UserTextChange(object sender, RoutedEventArgs e)

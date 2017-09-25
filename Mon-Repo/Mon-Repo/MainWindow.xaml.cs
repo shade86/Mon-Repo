@@ -117,11 +117,13 @@ namespace Mon_Repo
 
         private void LogoutClick(object sender, MouseButtonEventArgs e)
         {
-            var mw = new MainWindow();
-            //DataContext = _vm;
-            Close();
-            mw.ShowDialog();
-            
+           MessageBoxResult _questionResult = MessageBox.Show("Biztosan kijelentkezik?", "Kijelentkezés", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_questionResult == MessageBoxResult.Yes)
+            {
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            }
+                else return;
         }
     }
 }
