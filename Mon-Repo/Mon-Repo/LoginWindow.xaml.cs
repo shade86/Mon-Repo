@@ -43,7 +43,13 @@ namespace Mon_Repo
 
         private void ExitClick(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult _questionResult = MessageBox.Show("Biztosan kilép a programból?", "Kilépés", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_questionResult == MessageBoxResult.Yes)
+            {
             System.Windows.Application.Current.Shutdown();
+            }
+            else return;
+            
         }
         //BUTTON Animáció
         private void ExitMouseEnter(object sender, MouseEventArgs e)
