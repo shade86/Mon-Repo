@@ -39,9 +39,11 @@ namespace Mon_Repo
         }
         public void RemoveCart()
         {
-            CartSelectedProduct.Quantity --; 
+            if (CartSelectedProduct != null)
+                CartSelectedProduct.Quantity --; 
             {
-                foreach (var item in Products)
+                if (CartSelectedProduct != null)
+                    foreach (var item in Products)
                 {
                     if (item.Name == CartSelectedProduct.Name)
                     {
