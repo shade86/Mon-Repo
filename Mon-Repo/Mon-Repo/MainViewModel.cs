@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mon_Repo.Dal;
 
 namespace Mon_Repo
 {
@@ -15,11 +16,12 @@ namespace Mon_Repo
         public User AuthenticatedUser { get; set; }
         public MainViewModel()
         {
-            Products = new ObservableCollection<Product>
+            Products = new ObservableCollection<Product>();
+            var ctx = new Context();
+            foreach (var product in ctx.Products)
             {
-            new Product { Name = "Kenyér", Price = 10, Quantity = 10 },
-            new Product { Name = "Tej", Price = 20, Quantity = 100 }
-            };
+                Products.Add(new Product(product));
+            }
         }
         public void AddCart()
         {

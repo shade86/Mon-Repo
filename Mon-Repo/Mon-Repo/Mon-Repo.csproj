@@ -115,6 +115,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mon-Repo.Dal\Mon_Repo.Dal.csproj">
+      <Project>{8dd32c2f-5364-406e-9012-33976e4bac6f}</Project>
+      <Name>Mon_Repo.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
