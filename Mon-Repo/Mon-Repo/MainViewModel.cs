@@ -24,21 +24,22 @@ namespace Mon_Repo
             }
         }
         public void AddCart()
-        {
-            SelectedProduct.Quantity -= 1;
-            foreach (var item in AuthenticatedUser.ProductList)
-            {
-                if (SelectedProduct.Name == item.Name)
-                {
-                    item.Quantity++;
-                    AuthenticatedUser.Money -= item.Price;
-                    return;
+           {
+               SelectedProduct.Quantity -= 1;
+               foreach (var item in AuthenticatedUser.ProductList)
+               {
+                   if (SelectedProduct.Name == item.Name)
+                   {
+                       item.Quantity++;
+                       AuthenticatedUser.Money -= item.Price;
+                       return;
 
-                }
-            }
-            AuthenticatedUser.ProductList.Add(new Product { Name = SelectedProduct.Name, Price = SelectedProduct.Price, Quantity = 1 });
-            AuthenticatedUser.Money -= SelectedProduct.Price;
-        }
+                   }
+               }
+               AuthenticatedUser.ProductList.Add(new Product { Name = SelectedProduct.Name, Price = SelectedProduct.Price, Quantity = 1 });
+               AuthenticatedUser.Money -= SelectedProduct.Price;
+           }
+
         public void RemoveCart()
         {
             if (CartSelectedProduct != null)

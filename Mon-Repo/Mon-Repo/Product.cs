@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mon_Repo.Dal;
 
 namespace Mon_Repo
 {
@@ -38,6 +39,13 @@ namespace Mon_Repo
                 _quantity = value;
                 OnPropertyChange();
             }
+        }
+        public Product(ProductDbModel dbModel)
+        {
+            Name = dbModel.Name;
+            Price = dbModel.Price;
+            Quantity = dbModel.Quantity;
+
         }
     }
 }
