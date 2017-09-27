@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\
 Mon_Repo
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\App.xaml
 4-383596183
 
 18-1643917244
 14849735164
 LoginWindow.xaml;MainWindow.xaml;ProductForm.xaml;PurchasesWindow.xaml;
+=======
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\App.xaml
+3-1916496453
+
+19-716871003
+14-754393318
+LoginWindow.xaml;MainWindow.xaml;ProductForm.xaml;
+>>>>>>> 1f1e8bb4e4afc1a570c38738f092f795544cc787
 
 False
 

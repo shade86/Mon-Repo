@@ -23,6 +23,7 @@ namespace Mon_Repo
                 Products.Add(new Product(product));
             }
         }
+<<<<<<< HEAD
 
         Product FindProduct(string name)
         {
@@ -72,6 +73,25 @@ namespace Mon_Repo
             SelectedProduct.Quantity--;
             return null;
         }
+=======
+        public void AddCart()
+           {
+               SelectedProduct.Quantity -= 1;
+               foreach (var item in AuthenticatedUser.ProductList)
+               {
+                   if (SelectedProduct.Name == item.Name)
+                   {
+                       item.Quantity++;
+                       AuthenticatedUser.Money -= item.Price;
+                       return;
+
+                   }
+               }
+               AuthenticatedUser.ProductList.Add(new Product { Name = SelectedProduct.Name, Price = SelectedProduct.Price, Quantity = 1 });
+               AuthenticatedUser.Money -= SelectedProduct.Price;
+           }
+
+>>>>>>> 1f1e8bb4e4afc1a570c38738f092f795544cc787
         public void RemoveCart()
         {
             if (CartSelectedProduct != null)

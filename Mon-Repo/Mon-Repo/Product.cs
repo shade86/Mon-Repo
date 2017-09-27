@@ -52,5 +52,12 @@ namespace Mon_Repo
                 OnPropertyChange();
             }
         }
+        public Product(ProductDbModel dbModel)
+        {
+            Name = dbModel.Name;
+            Price = dbModel.Price;
+            Quantity = dbModel.Quantity;
+
+        }
     }
 }
