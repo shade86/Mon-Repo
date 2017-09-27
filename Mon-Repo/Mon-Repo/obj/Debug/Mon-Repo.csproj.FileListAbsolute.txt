@@ -35,3 +35,7 @@ C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindo
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\ProductForm.baml
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindow.g.cs
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\LoginWindow.baml
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\PurchasesWindow.g.cs
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\Mon-Repo.Dal.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\Mon-Repo.Dal.pdb
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\PurchasesWindow.baml

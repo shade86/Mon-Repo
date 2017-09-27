@@ -3,11 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mon_Repo.Dal;
 
 namespace Mon_Repo
 {
     public class Product : BaseModel
     {
+        public Product(ProductDbModel dbModel)
+        {
+            Name = dbModel.Name;
+            Price = dbModel.Price;
+            Quantity = dbModel.Quantity;
+        }
+        public Product()
+        {
+
+        }
+
         string _name;
         public string Name
         {
@@ -30,6 +42,7 @@ namespace Mon_Repo
         }
 
         int _quantity;
+      
         public int Quantity
         {
             get { return _quantity; }

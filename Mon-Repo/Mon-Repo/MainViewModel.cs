@@ -23,8 +23,20 @@ namespace Mon_Repo
                 Products.Add(new Product(product));
             }
         }
-        public void AddCart()
+
+        Product FindProduct(string name)
         {
+            foreach (var product in AuthenticatedUser.ProductList)
+            {
+                if (product.Name == name)
+                    return product;
+                        return null;
+                
+            }
+        }
+
+        public string AddCart()
+        /*{
             SelectedProduct.Quantity -= 1;
             foreach (var item in AuthenticatedUser.ProductList)
             {
@@ -38,6 +50,27 @@ namespace Mon_Repo
             }
             AuthenticatedUser.ProductList.Add(new Product { Name = SelectedProduct.Name, Price = SelectedProduct.Price, Quantity = 1 });
             AuthenticatedUser.Money -= SelectedProduct.Price;
+        }*/
+        {
+            if (SelectedProduct.Price > AuthenticatedUser.Money)
+                return "Nincs elég pénze a termék megvásárlásához!";
+            if (SelectedProduct.Quantity == 0)
+                return "A megvásárolni kívánt termék elfogyott";
+            var product = FindProduct(SelectedProduct.Name);
+            if (product == null)
+                AuthenticatedUser.ProductList.Add(new Product
+                {
+                    Name = SelectedProduct.Name,
+                    Price = SelectedProduct.Price,
+                    Quantity = 1
+                });
+            else
+            {
+                product.Quantity++;
+            }
+            AuthenticatedUser.Money -= SelectedProduct.Price;
+            SelectedProduct.Quantity--;
+            return null;
         }
         public void RemoveCart()
         {

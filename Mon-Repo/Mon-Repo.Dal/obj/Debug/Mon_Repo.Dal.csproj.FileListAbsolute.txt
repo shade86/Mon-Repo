@@ -1,0 +1,5 @@
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\Mon-Repo.Dal.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\Mon-Repo.Dal.pdb
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.csprojResolveAssemblyReference.cache
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.pdb
