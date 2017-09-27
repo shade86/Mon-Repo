@@ -59,14 +59,9 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="PurchasesWindow.xaml.cs">
       <DependentUpon>PurchasesWindow.xaml</DependentUpon>
     </Compile>
-=======
-    <Compile Include="Purchase.cs" />
-    <Compile Include="PurchasesViewModel.cs" />
->>>>>>> 1f1e8bb4e4afc1a570c38738f092f795544cc787
     <Compile Include="User.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>

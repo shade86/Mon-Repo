@@ -16,13 +16,9 @@ namespace Mon_Repo
             Username = user.Username;
             Password = user.Password;
             Money = user.Money;
-<<<<<<< HEAD
 
         }
 
-=======
-        }
->>>>>>> 1f1e8bb4e4afc1a570c38738f092f795544cc787
         public ObservableCollection<Product>ProductList { get; set; }
    public string Password { get; set; }
         public string Username { get; set; }
