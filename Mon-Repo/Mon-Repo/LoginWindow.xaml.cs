@@ -23,6 +23,7 @@ namespace Mon_Repo
         public LoginWindow()
         {
             InitializeComponent();
+            this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             DataContext = ViewModel;
         }
@@ -81,6 +82,19 @@ namespace Mon_Repo
         {
             if (PasswordTextBox.Password == "")
             PasswordTextBox.Password = "Jelszó";
+        }
+
+        private void HandleEsc(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                MessageBoxResult _questionResult = MessageBox.Show("Biztosan kilép a programból?", "Kilépés", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (_questionResult == MessageBoxResult.Yes)
+                {
+                    System.Windows.Application.Current.Shutdown();
+                }
+                else return;
+            }
         }
     }
 }

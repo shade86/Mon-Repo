@@ -21,13 +21,13 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-
+        <Image HorizontalAlignment="Left" Height="53" Margin="124,56,0,0" VerticalAlignment="Top" Width="54" Source="Resources/signin.png" Grid.ColumnSpan="2"/>
         <!--  <Label Content="Username:" HorizontalAlignment="Left" Height="27" Margin="10,20,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Password:" HorizontalAlignment="Left" Height="27" Margin="10,52,0,0" VerticalAlignment="Top" Width="113"/>-->
-        <Button Content="Bejelentkezés" IsDefault="True" HorizontalAlignment="Left" Height="25" Margin="107,156,0,0" VerticalAlignment="Top" Width="86" Click="LoginClick" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+        <Button Content="Bejelentkezés" IsDefault="True" HorizontalAlignment="Left" Height="25" Margin="107,187,0,0" VerticalAlignment="Top" Width="86" Click="LoginClick" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
         </Button>
         <!--<PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="19" Margin="128,52,0,0" VerticalAlignment="Top" Width="130"/>-->
-        <Button x:Name="ExitButton" Content="Kilépés" HorizontalAlignment="Left" Margin="107,186,0,0" VerticalAlignment="Top" Width="87" Height="23" Click="ExitClick" MouseEnter="ExitMouseEnter" MouseLeave="ExitMouseLeave" Grid.ColumnSpan="2" RenderTransformOrigin="0.497,0.53">
+        <Button x:Name="ExitButton" Content="Kilépés" HorizontalAlignment="Left" Margin="107,217,0,0" VerticalAlignment="Top" Width="87" Height="23" Click="ExitClick" MouseEnter="ExitMouseEnter" MouseLeave="ExitMouseLeave" Grid.ColumnSpan="2" RenderTransformOrigin="0.497,0.53">
             <!--Button animáció-->
             <!--  <Button.RenderTransform>
                 <ScaleTransform x:Name="myScaleTransform" ScaleX="1" ScaleY="1"/>
@@ -39,12 +39,12 @@
 
 
 
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="85,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="Felhasználónév"
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="85,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="Felhasználónév"
                FontStyle="Italic"
                Foreground="LightGray"
                Focusable="False" Grid.ColumnSpan="2">
         </TextBox>
-        <TextBox Text="{Binding LoginName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="27" Margin="85,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"
+        <TextBox Text="{Binding LoginName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="27" Margin="85,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"
                Focusable="True" Grid.ColumnSpan="2">
             <TextBox.Style>
                 <Style TargetType="TextBox">
@@ -67,12 +67,12 @@
         </TextBox>
 
 
-        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="27" Margin="85,117,0,0" VerticalAlignment="Top" Width="130" Password="Jelszó"
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="27" Margin="85,146,0,0" VerticalAlignment="Top" Width="130" Password="Jelszó"
                FontStyle="Italic"
                Foreground="LightGray"
                Focusable="True" GotFocus="PasswordTextboxClick" LostFocus="PasswordTextBoxLostFocus" Grid.ColumnSpan="2">
         </PasswordBox>
-        <Image HorizontalAlignment="Left" Height="53" Margin="124,19,0,0" VerticalAlignment="Top" Width="54" Source="../signin.png" Grid.ColumnSpan="2"/>
+       
 
     </Grid>
 </Window>
