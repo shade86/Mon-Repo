@@ -23,7 +23,7 @@ namespace Mon_Repo
         public LoginWindow()
         {
             InitializeComponent();
-            
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             DataContext = ViewModel;
         }
         private void LoginClick(object sender, RoutedEventArgs e)

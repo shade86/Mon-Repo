@@ -28,6 +28,7 @@ namespace Mon_Repo
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             //  DataContext = new MainViewModel();
             // var lvm = new LoginViewModel();
             LoginWindow lw = new LoginWindow();

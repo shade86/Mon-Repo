@@ -62,6 +62,7 @@
     <Compile Include="PurchasesWindow.xaml.cs">
       <DependentUpon>PurchasesWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Statistics.cs" />
     <Compile Include="User.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
