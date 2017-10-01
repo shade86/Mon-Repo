@@ -126,5 +126,12 @@ namespace Mon_Repo
             }
                 else return;
         }
+
+        private void PurchasesClick(object sender, RoutedEventArgs e)
+        {
+            var _pvm = new PurchasesViewModel(_vm.AuthenticatedUser);
+            var pw = new PurchasesWindow() { DataContext = _pvm };
+            pw.ShowDialog();
+        }
     }
 }

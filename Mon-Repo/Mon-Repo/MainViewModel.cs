@@ -57,16 +57,29 @@ namespace Mon_Repo
         public void RemoveCart()
         {
             if (CartSelectedProduct != null)
-                CartSelectedProduct.Quantity --; 
+                CartSelectedProduct.Quantity --;
             {
-                if (CartSelectedProduct != null)
-                    foreach (var item in Products)
+                foreach (var item in Products)
                 {
-                    if (item.Name == CartSelectedProduct.Name)
+                    if (item.Name != CartSelectedProduct.Name)
                     {
-                        item.Quantity++;
-                        AuthenticatedUser.Money += item.Price;
+                        Products.Add(new Product
+                        {
+                            Name = CartSelectedProduct.Name,
+                            Price = CartSelectedProduct.Price,
+                            Quantity = 1
+                        });
+                        AuthenticatedUser.Money += CartSelectedProduct.Price;
+                        
+                        foreach (var item2 in Products)
+                            {
+                            if (item2.Name == CartSelectedProduct.Name)
+                            {
+                                item2.Quantity++;
+                                AuthenticatedUser.Money += item2.Price;
+                            } }
                     }
+                    else return;
                 }
             }
         }

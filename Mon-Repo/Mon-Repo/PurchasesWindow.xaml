@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Repo"
         mc:Ignorable="d"
-        Title="PurchasesWindow" Height="352.5" Width="300">
-    <Grid>
-        <ListBox ItemsSource="{Binding Purchases}" HorizontalAlignment="Left" Height="299" Margin="25,10,0,-40" VerticalAlignment="Top" Width="235">
+        Title="Vásárlásaim" Height="352.5" Width="456.973" ResizeMode="NoResize">
+    <Grid Margin="0,-40,-0.2,-0.2">
+ 
+        <ListBox ItemsSource="{Binding Purchases}" HorizontalAlignment="Left" Height="299" Margin="35,54,0,0" VerticalAlignment="Top" Width="378">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding Timestamp}" FontSize="11"/>
-                        <Label Content="{Binding SumPrice}" FontSize="11"/>
-                        <Label Content="{Binding SumCount}" FontSize="11"/>
+                        <Label Content="{Binding Timestamp}" FontSize="11" ContentStringFormat="Váráslás dátuma: {0}"/>
+                        <Label Content="{Binding SumPrice}" FontSize="11" ContentStringFormat="Vásárlás összértéke: 0 Ft"/>
+                        <Label Content="{Binding SumCount}" FontSize="11" ContentStringFormat="Megvásárolt termékek száma: 0 db"/>
 
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
     </Grid>
 </Window>

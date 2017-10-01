@@ -47,6 +47,7 @@
         <Label Content="{Binding AuthenticatedUser.Money}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="855,36,0,0" VerticalAlignment="Top" Width="86"/>
         <Label Content="Össz. költség:" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="350"/>
         <Label Content="{Binding Statistics.SumSpent, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="542,466,0,0" VerticalAlignment="Top" Width="114" Height="26"/>
+        <Button Content="Vásárlásaim" HorizontalAlignment="Left" Margin="897,411,0,0" VerticalAlignment="Top" Width="75" Click="PurchasesClick"/>
 
     </Grid>
 </Window>
