@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mon_Repo.Dal;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -130,8 +131,23 @@ namespace Mon_Repo
         private void PurchasesClick(object sender, RoutedEventArgs e)
         {
             var _pvm = new PurchasesViewModel(_vm.AuthenticatedUser);
-            var pw = new PurchasesWindow() { DataContext = _pvm };
+            var pw = new PurchasedProducts() { DataContext = _pvm };
             pw.ShowDialog();
+        }
+
+        private void StatisticsClick(object sender, RoutedEventArgs e)
+        {
+            var user = _vm.AuthenticatedUser;
+            MessageBox.Show($"Össz. költség: {Statistics.SumSpent(user.ProductList)}Ft");
+        }
+
+        private void PurchaseClick(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in _vm.AuthenticatedUser.ProductList)
+            {
+                MessageBox.Show($"Megvásárolt termék(ek): \n Termék megnevezése: {item.Name}\n Termék ára: {item.Price}\n Megvásárolt darabszám: {item.Quantity}");
+            }
+            _vm.CleanCart(); 
         }
     }
 }

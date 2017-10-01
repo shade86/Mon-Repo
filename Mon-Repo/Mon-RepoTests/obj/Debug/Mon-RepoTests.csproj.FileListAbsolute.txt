@@ -1,0 +1,10 @@
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-RepoTests.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-RepoTests.pdb
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-Repo.exe
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-Repo.Dal.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-Repo.pdb
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-Repo.Dal.pdb
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\obj\Debug\Mon-RepoTests.csprojResolveAssemblyReference.cache
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\obj\Debug\Mon-RepoTests.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\obj\Debug\Mon-RepoTests.pdb

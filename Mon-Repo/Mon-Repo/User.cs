@@ -20,6 +20,7 @@ namespace Mon_Repo
         }
 
         public ObservableCollection<Product> ProductList { get; set; } = new ObservableCollection<Product>();
+        public ObservableCollection<Product> PurchasedProductsList { get; set; } = new ObservableCollection<Product>();
    public string Password { get; set; }
         public string Username { get; set; }
 

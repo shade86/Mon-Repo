@@ -13,6 +13,9 @@ namespace Mon_Repo
         {
             return products.Sum(x => x.Price * x.Quantity);
         }
-       
+       public static int SumQuantity(IEnumerable<Product> products)
+        {
+            return products.Sum(x => x.Quantity);
+        }
     }
 }

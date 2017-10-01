@@ -14,6 +14,7 @@ namespace Mon_Repo
             Name = dbModel.Name;
             Price = dbModel.Price;
             Quantity = dbModel.Quantity;
+            BuyDate = dbModel.BuyDate;
         }
         public Product()
         {
@@ -50,6 +51,16 @@ namespace Mon_Repo
             {
                 _quantity = value;
                 OnPropertyChange();
+            }
+        }
+        string _buydate;
+        public string BuyDate
+        {
+            get { return _buydate; }
+            set
+            {
+                _buydate = DateTime.Now.ToString("f");
+                //OnPropertyChange();
             }
         }
     }

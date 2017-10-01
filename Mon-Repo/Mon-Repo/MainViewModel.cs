@@ -82,6 +82,25 @@ namespace Mon_Repo
                     else return;
                 }
             }
+
+        }
+        public void CleanCart()
+        {
+            foreach (var item in AuthenticatedUser.ProductList)
+            {
+                if (item.Name != null)
+                {
+                    AuthenticatedUser.PurchasedProductsList.Add(new Product
+                    {
+                        Name = item.Name,
+                        Price = item.Price,
+                        Quantity = item.Quantity,
+                        BuyDate = item.BuyDate
+                        
+                    });
+                }
+            }
+            AuthenticatedUser.ProductList.Clear();
         }
     }
 }
