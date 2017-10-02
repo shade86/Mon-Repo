@@ -13,7 +13,8 @@ namespace Mon_Repo
         {
             return Product.Name != null &&
                 Product.Name.Length > 0 &&
-                Product.Price > -1;
+                Product.Price > -1 &&
+                Product.Quantity > 0;
         }
         public bool IsEdit { get; set; }
 

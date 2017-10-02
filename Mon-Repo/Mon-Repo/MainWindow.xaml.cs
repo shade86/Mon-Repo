@@ -85,12 +85,11 @@ namespace Mon_Repo
                 return;
             }
             var vm = new ProductFormViewModel
-
             {
-
                 Product = ((MainViewModel)DataContext).SelectedProduct
             };
             ((MainViewModel)DataContext).Products.Remove(vm.Product);
+            
         }
 
         private void BuyProduct(object sender, MouseButtonEventArgs e)
@@ -147,7 +146,12 @@ namespace Mon_Repo
             {
                 MessageBox.Show($"Megvásárolt termék(ek): \n Termék megnevezése: {item.Name}\n Termék ára: {item.Price}\n Megvásárolt darabszám: {item.Quantity}");
             }
-            _vm.CleanCart(); 
+            _vm.PurchaseFromCart(); 
+        }
+
+        private void ClearCartClick(object sender, RoutedEventArgs e)
+        {
+            _vm.ClearCart();
         }
     }
 }

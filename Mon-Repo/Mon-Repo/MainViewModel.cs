@@ -42,7 +42,6 @@ namespace Mon_Repo
             {
                 product.Quantity++;
             }
-            AuthenticatedUser.Money -= SelectedProduct.Price;
             SelectedProduct.Quantity--;
             return null;
         }
@@ -54,37 +53,32 @@ namespace Mon_Repo
                     return product;
             return null;
         }
-        public void RemoveCart()
+        public string RemoveCart()
         {
-            if (CartSelectedProduct != null)
-                CartSelectedProduct.Quantity --;
+           if (CartSelectedProduct == null)
+            { return null; }
+            var product = FindProduct(CartSelectedProduct.Name);
+            if (SelectedProduct == null)
             {
-                foreach (var item in Products)
+                Products.Add(new Product
                 {
-                    if (item.Name != CartSelectedProduct.Name)
-                    {
-                        Products.Add(new Product
-                        {
-                            Name = CartSelectedProduct.Name,
-                            Price = CartSelectedProduct.Price,
-                            Quantity = 1
-                        });
-                        AuthenticatedUser.Money += CartSelectedProduct.Price;
-                        
-                        foreach (var item2 in Products)
-                            {
-                            if (item2.Name == CartSelectedProduct.Name)
-                            {
-                                item2.Quantity++;
-                                AuthenticatedUser.Money += item2.Price;
-                            } }
-                    }
-                    else return;
+                    Name = product.Name, Price = product.Price, Quantity = 1});
                 }
-            }
-
+            if (product != null)
+                {
+                product.Quantity--;
+                foreach (var item in Products)
+                    {
+                    if (item.Name == product.Name)
+                        {
+                            item.Quantity++;
+                        }
+                    }
+                }
+            return null;
         }
-        public void CleanCart()
+
+        public void PurchaseFromCart()
         {
             foreach (var item in AuthenticatedUser.ProductList)
             {
@@ -100,8 +94,19 @@ namespace Mon_Repo
                     });
                 }
             }
+            AuthenticatedUser.Money -= Statistics.SumSpent(AuthenticatedUser.ProductList);
             AuthenticatedUser.ProductList.Clear();
         }
+        public void ClearCart()
+            {
+            foreach (var item in AuthenticatedUser.ProductList)
+                foreach (var item2 in Products)
+                { 
+                if (item.Name == item2.Name)
+                    item2.Quantity++;
+            }
+                AuthenticatedUser.ProductList.Clear();
+            }
     }
 }
 

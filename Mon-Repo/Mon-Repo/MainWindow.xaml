@@ -45,11 +45,12 @@
         <Label x:Name="LogoutLabel" Content="Kijelentkezés" Foreground="Blue" HorizontalAlignment="Left" Margin="922,10,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick"/>
         <Label Content="Pénztárca:" HorizontalAlignment="Left" Margin="779,36,0,0" VerticalAlignment="Top" Width="86"/>
         <Label Content="{Binding AuthenticatedUser.Money}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="855,36,0,0" VerticalAlignment="Top" Width="86"/>
-        <!--<Label Content="Össz. költség:" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="350"/>
-        <Label Content="{Binding Statistics.SumSpent, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="542,466,0,0" VerticalAlignment="Top" Width="114" Height="26"/>-->
+       <!-- <Label Content="Össz. költség:" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="350"/>
+        <Label Content="{Binding AuthenticatedUser.SumSpent, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="542,466,0,0" VerticalAlignment="Top" Width="114" Height="26"/>-->
         <Button Content="Vásárlásaim" HorizontalAlignment="Left" Margin="897,411,0,0" VerticalAlignment="Top" Width="75" Click="PurchasesClick"/>
         <Button Content="Statisztika" HorizontalAlignment="Left" Margin="897,387,0,0" VerticalAlignment="Top" Width="75" Click="StatisticsClick"/>
         <Button Content="Vásárlás" HorizontalAlignment="Left" Margin="897,80,0,0" VerticalAlignment="Top" Width="75" Click="PurchaseClick"/>
+        <Button Content="Kosár ürítése" HorizontalAlignment="Left" Margin="897,105,0,0" VerticalAlignment="Top" Width="75" Click="ClearCartClick"/>
 
     </Grid>
 </Window>

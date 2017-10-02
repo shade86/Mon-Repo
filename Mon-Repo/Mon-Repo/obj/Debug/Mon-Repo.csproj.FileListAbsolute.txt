@@ -45,3 +45,5 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\Mon-Repo.csproj.GenerateResource.Cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\PurchasedProducts.g.cs
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\PurchasedProducts.baml
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\PurchasedProducts.g.cs
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\PurchasedProducts.baml
