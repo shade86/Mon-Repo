@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mon_Repo.Dal;
+using System.Windows;
 
 namespace Mon_Repo
 {
@@ -80,20 +81,28 @@ namespace Mon_Repo
 
         public void PurchaseFromCart()
         {
-            foreach (var item in AuthenticatedUser.ProductList)
-            {
-                if (item.Name != null)
+            if (AuthenticatedUser.Money > Statistics.SumSpent(AuthenticatedUser.ProductList))
+
+                foreach (var item in AuthenticatedUser.ProductList)
                 {
-                    AuthenticatedUser.PurchasedProductsList.Add(new Product
+                    if (item.Name != null)
                     {
-                        Name = item.Name,
-                        Price = item.Price,
-                        Quantity = item.Quantity,
-                        BuyDate = item.BuyDate
-                        
-                    });
+                        AuthenticatedUser.PurchasedProductsList.Add(new Product
+                        {
+                            Name = item.Name,
+                            Price = item.Price,
+                            Quantity = item.Quantity,
+                            BuyDate = item.BuyDate
+
+                        });
+                    }
                 }
+            else{
+                MessageBox.Show($"Nincs elég pénz a művelet végrehajtásához!");
+                return;
             }
+            
+           
             AuthenticatedUser.Money -= Statistics.SumSpent(AuthenticatedUser.ProductList);
             AuthenticatedUser.ProductList.Clear();
         }

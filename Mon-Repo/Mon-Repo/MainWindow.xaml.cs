@@ -142,11 +142,12 @@ namespace Mon_Repo
 
         private void PurchaseClick(object sender, RoutedEventArgs e)
         {
-            foreach (var item in _vm.AuthenticatedUser.ProductList)
-            {
-                MessageBox.Show($"Megvásárolt termék(ek): \n Termék megnevezése: {item.Name}\n Termék ára: {item.Price}\n Megvásárolt darabszám: {item.Quantity}");
-            }
-            _vm.PurchaseFromCart(); 
+            _vm.PurchaseFromCart();
+            if (_vm.AuthenticatedUser.Money > Statistics.SumSpent(_vm.AuthenticatedUser.ProductList))
+                foreach (var item in _vm.AuthenticatedUser.ProductList)
+                {
+                    MessageBox.Show($"Megvásárolt termék(ek): \n Termék megnevezése: {item.Name}\n Termék ára: {item.Price}\n Megvásárolt darabszám: {item.Quantity}");
+                } 
         }
 
         private void ClearCartClick(object sender, RoutedEventArgs e)
