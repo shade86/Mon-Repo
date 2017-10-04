@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mon_Repo.Dal;
 using System.Windows;
+using System.Windows.Data;
 
 namespace Mon_Repo
 {
@@ -24,7 +25,6 @@ namespace Mon_Repo
                 Products.Add(new Product(product));
             }
         }
-
         public string AddCart()
         {
             if (SelectedProduct.Price > AuthenticatedUser.Money)
@@ -116,6 +116,101 @@ namespace Mon_Repo
             }
                 AuthenticatedUser.ProductList.Clear();
             }
+        public void ListOrderABC()
+        {
+            var list = Products.Cast<Product>().OrderBy(item => item.Name).ToList();
+            Products.Clear();
+            foreach (Product product in list)
+            {
+                Products.Add(product);
+            }
+        }
+        public void ListOrderPriceAsc()
+        {
+            var list = Products.Cast<Product>().OrderBy(item => item.Price).ToList();
+            Products.Clear();
+            foreach (Product product in list)
+            {
+                Products.Add(product);
+            }
+        }
+        public void ListOrderPriceDesc()
+        {
+            var list = Products.Cast<Product>().OrderByDescending(item => item.Price).ToList();
+            Products.Clear();
+            foreach (Product product in list)
+            {
+                Products.Add(product);
+            }
+        }
+        public void ListOrderQuantityAsc()
+        {
+            var list = Products.Cast<Product>().OrderBy(item => item.Quantity).ToList();
+            Products.Clear();
+            foreach (Product product in list)
+            {
+                Products.Add(product);
+            }
+        }
+        public void ListOrderQuantityDesc()
+        {
+            var list = Products.Cast<Product>().OrderByDescending(item => item.Quantity).ToList();
+            Products.Clear();
+            foreach (Product product in list)
+            {
+                Products.Add(product);
+            }
+        }
+
+
+
+
+        public void CartListOrderABC()
+        {
+            var list = AuthenticatedUser.ProductList.Cast<Product>().OrderBy(item => item.Name).ToList();
+            AuthenticatedUser.ProductList.Clear();
+            foreach (Product product in list)
+            {
+                AuthenticatedUser.ProductList.Add(product);
+            }
+        }
+        public void CartListOrderPriceAsc()
+        {
+            var list = AuthenticatedUser.ProductList.Cast<Product>().OrderBy(item => item.Price).ToList();
+            AuthenticatedUser.ProductList.Clear();
+            foreach (Product product in list)
+            {
+                AuthenticatedUser.ProductList.Add(product);
+            }
+        }
+        public void CartListOrderPriceDesc()
+        {
+            var list = AuthenticatedUser.ProductList.Cast<Product>().OrderByDescending(item => item.Price).ToList();
+            AuthenticatedUser.ProductList.Clear();
+            foreach (Product product in list)
+            {
+                AuthenticatedUser.ProductList.Add(product);
+            }
+        }
+        public void CartListOrderQuantityAsc()
+        {
+            var list = AuthenticatedUser.ProductList.Cast<Product>().OrderBy(item => item.Quantity).ToList();
+            AuthenticatedUser.ProductList.Clear();
+            foreach (Product product in list)
+            {
+                AuthenticatedUser.ProductList.Add(product);
+            }
+        }
+        public void CartListOrderQuantityDesc()
+        {
+            var list = AuthenticatedUser.ProductList.Cast<Product>().OrderByDescending(item => item.Quantity).ToList();
+            AuthenticatedUser.ProductList.Clear();
+            foreach (Product product in list)
+            {
+                AuthenticatedUser.ProductList.Add(product);
+            }
+        }
+
     }
 }
 

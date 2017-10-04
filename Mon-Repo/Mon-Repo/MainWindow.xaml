@@ -5,52 +5,119 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Repo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="1024" ResizeMode="NoResize">
+        Title="Mon Repo Webshop Alkalmazás" Height="550" Width="1024" ResizeMode="NoResize" Background="#FF392E46">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="433*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF7F6CFF" Offset="0"/>
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="Új termék feltöltése" HorizontalAlignment="Left" Height="30" Margin="10,82,0,0" VerticalAlignment="Top" Width="132" Click="NewProductClick"/>
-        <Button Content="Termék szerkesztése" HorizontalAlignment="Left" Height="30" Margin="10,117,0,0" VerticalAlignment="Top" Width="132" Click="EditProductClick"/>
-        <Button Content="Termék törlése" HorizontalAlignment="Left" Height="30" Margin="10,152,0,0" VerticalAlignment="Top" Width="132" Click="DeleteProductClick"/>
-        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="350" Margin="147,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="BuyProduct">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding Name}" ContentStringFormat="Termék megnevezése: {0}"/>
-                        <Label Content="{Binding Price}" ContentStringFormat="Termék ára: 0 Ft"/>
-                        <Label Content="{Binding Quantity}" ContentStringFormat="Mennyiség: 0 db"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="350" Margin="542,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="CartDoubleClick" MouseUp="ClickUp">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding Name}" ContentStringFormat="Termék megnevezése: {0}"/>
-                        <Label Content="{Binding Price}" ContentStringFormat="Termék ára: 0 Ft"/>
-                        <Label Content="{Binding Quantity}" ContentStringFormat="Mennyiség: 0 db"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Label Content="{Binding AuthenticatedUser.Username}" HorizontalAlignment="Left" Margin="855,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Megvásárolható termékek:" HorizontalAlignment="Left" Margin="147,45,0,0" VerticalAlignment="Top" Width="350"/>
-        <Label Content="Kosár tartalma:" HorizontalAlignment="Left" Margin="542,45,0,0" VerticalAlignment="Top" Width="350"/>
-        <Label Content="Felhasználó:" HorizontalAlignment="Left" Margin="779,10,0,0" VerticalAlignment="Top" Width="86"/>
-        <Label x:Name="LogoutLabel" Content="Kijelentkezés" Foreground="Blue" HorizontalAlignment="Left" Margin="922,10,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick"/>
-        <Label Content="Pénztárca:" HorizontalAlignment="Left" Margin="779,36,0,0" VerticalAlignment="Top" Width="86"/>
-        <Label Content="{Binding AuthenticatedUser.Money}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="855,36,0,0" VerticalAlignment="Top" Width="86"/>
-       <!-- <Label Content="Össz. költség:" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="350"/>
-        <Label Content="{Binding AuthenticatedUser.SumSpent, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="542,466,0,0" VerticalAlignment="Top" Width="114" Height="26"/>-->
-        <Button Content="Vásárlásaim" HorizontalAlignment="Left" Margin="897,411,0,0" VerticalAlignment="Top" Width="75" Click="PurchasesClick"/>
-        <Button Content="Statisztika" HorizontalAlignment="Left" Margin="897,387,0,0" VerticalAlignment="Top" Width="75" Click="StatisticsClick"/>
-        <Button Content="Vásárlás" HorizontalAlignment="Left" Margin="897,80,0,0" VerticalAlignment="Top" Width="75" Click="PurchaseClick"/>
-        <Button Content="Kosár ürítése" HorizontalAlignment="Left" Margin="897,105,0,0" VerticalAlignment="Top" Width="75" Click="ClearCartClick"/>
+        <Border BorderBrush="White" CornerRadius="20" Background="#FF392E46" BorderThickness="0" HorizontalAlignment="Left" Height="63" Margin="1,54,0,404" Width="154" Grid.Column="1"/>
+        <Border Background="#FF392E46" BorderThickness="1" HorizontalAlignment="Left" Height="441" Margin="0,80,0,0" VerticalAlignment="Top" Width="152"/>
+        <Border BorderBrush="White" CornerRadius="20" Background="#FF392E46" BorderThickness="0" HorizontalAlignment="Left" Height="63" Margin="391,51,0,407" Width="154" Grid.Column="1"/>
 
+        <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="419" Margin="0,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="BuyProduct" Grid.Column="1">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Name}" ContentStringFormat="Termék megnevezése: {0}"/>
+                        <Label Content="{Binding Price}" ContentStringFormat="Termék ára: 0 Ft"/>
+                        <Label Content="{Binding Quantity}" ContentStringFormat="Mennyiség: 0 db"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox SelectedItem="{Binding CartSelectedProduct}" ItemsSource="{Binding AuthenticatedUser.ProductList}" HorizontalAlignment="Left" Height="419" Margin="390,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="CartDoubleClick" MouseUp="ClickUp" Grid.Column="1">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Name}" ContentStringFormat="Termék megnevezése: {0}"/>
+                        <Label Content="{Binding Price}" ContentStringFormat="Termék ára: 0 Ft"/>
+                        <Label Content="{Binding Quantity}" ContentStringFormat="Mennyiség: 0 db"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="{Binding AuthenticatedUser.Username}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Foreground="#FFCDBBBB" FontSize="16" Width="132" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Height="38"/>
+        <Label Content="Megvásárolható termékek:" HorizontalAlignment="Left" Margin="3,54,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFCDBBBB" Grid.Column="1"/>
+        <Label Content="Kosár tartalma:" HorizontalAlignment="Left" Margin="393,54,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFCDBBBB" Grid.Column="1"/>
+        <Label x:Name="LogoutLabel" Content="Kijelentkezés" HorizontalContentAlignment="Center" Foreground="#FFCDBBBB" HorizontalAlignment="Left" Margin="34,436,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick" FontFamily="Arial" FontWeight="ExtraLight"/>
+        <Label Content="{Binding AuthenticatedUser.Money}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ContentStringFormat="$ 0 Ft" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Width="132" Foreground="#FFCDBBBB" FontFamily="Arial" FontSize="14" Height="29" FontWeight="ExtraLight"/>
+        <!-- <Label Content="Össz. költség:" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="350"/>
+        <Label Content="{Binding Source=Statistics.SumSpent, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="542,466,0,0" VerticalAlignment="Top" Width="114" Height="26"/>-->
+        <Button Content="Vásárlásaim" HorizontalAlignment="Left" Margin="745,479,0,0" VerticalAlignment="Top" Width="75" Click="PurchasesClick" Grid.Column="1"/>
+        <Button Content="Statisztika" HorizontalAlignment="Left" Margin="745,454,0,0" VerticalAlignment="Top" Width="75" Click="StatisticsClick" Grid.Column="1"/>
+        <Button Content="Vásárlás" HorizontalAlignment="Left" Margin="745,80,0,0" VerticalAlignment="Top" Width="75" Click="PurchaseClick" Grid.Column="1"/>
+        <Button Content="Kosár ürítése" HorizontalAlignment="Left" Margin="745,105,0,0" VerticalAlignment="Top" Width="75" Click="ClearCartClick" Grid.Column="1"/>
+
+        <Label Content="Új termék feltöltése" Cursor="Hand" HorizontalAlignment="Left" Margin="3,191,0,0" VerticalAlignment="Top" MouseLeftButtonDown="NewProductClick" Foreground="#FFCDBBBB" FontFamily="Calibri" FontSize="16" Width="144" FontWeight="ExtraLight" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D1725" />
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <Label Content="Termék szerkesztése" Cursor="Hand" HorizontalAlignment="Left" Margin="3,225,0,0" VerticalAlignment="Top" MouseLeftButtonDown="EditProductClick" Foreground="#FFCDBBBB" FontFamily="Calibri" FontSize="16" FontWeight="ExtraLight" Width="144" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D1725" />
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <Label Content="Termék törlése" Cursor="Hand" HorizontalAlignment="Left" Margin="3,259,0,0" VerticalAlignment="Top" MouseLeftButtonDown="DeleteProductClick" Foreground="#FFCDBBBB" FontFamily="Calibri" FontSize="16" FontWeight="ExtraLight" Width="144" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D1725" />
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <StackPanel Grid.ColumnSpan="2">
+            <ComboBox SelectedIndex="0" Margin="322,58,0,0" VerticalAlignment="Center" Width="180" Height="23" HorizontalAlignment="Left" BorderBrush="White" Foreground="Black" Background="Red" >
+                <ComboBoxItem Content="Rendezés szempontja" IsEnabled="False"/>
+                <ComboBoxItem Content="Név szerint" Selected="SortABCSelected"/>
+                <ComboBoxItem Content="Ár szerint növekvő" Selected="OrderPriceAscSelect"/>
+                <ComboBoxItem Content="Ár szerint csökkenő" Selected="OrderPriceDesc"/>
+                <ComboBoxItem Content="Mennyiség szerint növekvő" Selected="OrderQuantityAsc"/>
+                <ComboBoxItem Content="Mennyiség szerint csökkenő" Selected="OrderQuantityDesc"/>
+            </ComboBox>
+            <ComboBox SelectedIndex="0" Margin="712,-23,0,0" VerticalAlignment="Center" Width="180" Height="23" HorizontalAlignment="Left" BorderBrush="White" Foreground="Black" Background="Red" >
+                <ComboBoxItem Content="Rendezés szempontja" IsEnabled="False"/>
+                <ComboBoxItem Content="Név szerint" Selected="CartSortABCSelected"/>
+                <ComboBoxItem Content="Ár szerint növekvő" Selected="CartOrderPriceAscSelect"/>
+                <ComboBoxItem Content="Ár szerint csökkenő" Selected="CartOrderPriceDesc"/>
+                <ComboBoxItem Content="Mennyiség szerint növekvő" Selected="CartOrderQuantityAsc"/>
+                <ComboBoxItem Content="Mennyiség szerint csökkenő" Selected="CartOrderQuantityDesc"/>
+            </ComboBox>
+        </StackPanel>
     </Grid>
+
 </Window>

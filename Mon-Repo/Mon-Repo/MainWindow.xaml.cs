@@ -40,58 +40,6 @@ namespace Mon_Repo
             _vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
             DataContext = _vm;
         }
-
-        void NewProductClick(object sender, RoutedEventArgs e)
-        {
-            var vm = new ProductFormViewModel
-            {
-                Product = new Product()
-            };
-            var form = new ProductForm()
-            {
-                DataContext = vm
-            };
-            form.ShowDialog();
-            if (vm.Validate())
-                ((MainViewModel)DataContext).Products.Add(vm.Product);
-        }
-
-        private void EditProductClick(object sender, RoutedEventArgs e)
-        {
-            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
-            if (SelectedProduct == null)
-            {
-                return;
-            }
-            var vm = new ProductFormViewModel
-
-            {
-                IsEdit = true,
-                Product = ((MainViewModel)DataContext).SelectedProduct
-            };
-            var form = new ProductForm()
-            {
-                DataContext = vm
-            };
-            form.ShowDialog();
-
-        }
-
-        private void DeleteProductClick(object sender, RoutedEventArgs e)
-        {
-            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
-            if (SelectedProduct == null)
-            {
-                return;
-            }
-            var vm = new ProductFormViewModel
-            {
-                Product = ((MainViewModel)DataContext).SelectedProduct
-            };
-            ((MainViewModel)DataContext).Products.Remove(vm.Product);
-            
-        }
-
         private void BuyProduct(object sender, MouseButtonEventArgs e)
         {
             if (_vm.SelectedProduct != null)
@@ -153,6 +101,112 @@ namespace Mon_Repo
         private void ClearCartClick(object sender, RoutedEventArgs e)
         {
             _vm.ClearCart();
+        }
+
+        private void ComboBoxItem_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
+        }
+
+        private void SortABCSelected(object sender, RoutedEventArgs e)
+        {
+            _vm.ListOrderABC();
+        }
+
+        private void OrderPriceAscSelect(object sender, RoutedEventArgs e)
+        {
+            _vm.ListOrderPriceAsc();
+        }
+
+        private void OrderPriceDesc(object sender, RoutedEventArgs e)
+        {
+            _vm.ListOrderPriceDesc();
+        }
+
+        private void OrderQuantityAsc(object sender, RoutedEventArgs e)
+        {
+            _vm.ListOrderQuantityAsc();
+        }
+
+        private void OrderQuantityDesc(object sender, RoutedEventArgs e)
+        {
+            _vm.ListOrderQuantityDesc();
+        }
+
+        private void NewProductClick(object sender, MouseButtonEventArgs e)
+        {
+            
+                var vm = new ProductFormViewModel
+                {
+                    Product = new Product()
+                };
+                var form = new ProductForm()
+                {
+                    DataContext = vm
+                };
+                form.ShowDialog();
+                if (vm.Validate())
+                    ((MainViewModel)DataContext).Products.Add(vm.Product);
+            
+        }
+
+        private void EditProductClick(object sender, MouseButtonEventArgs e)
+        {
+            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
+            if (SelectedProduct == null)
+            {
+                return;
+            }
+            var vm = new ProductFormViewModel
+
+            {
+                IsEdit = true,
+                Product = ((MainViewModel)DataContext).SelectedProduct
+            };
+            var form = new ProductForm()
+            {
+                DataContext = vm
+            };
+            form.ShowDialog();
+
+        }
+
+        private void DeleteProductClick(object sender, MouseButtonEventArgs e)
+        {
+            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
+            if (SelectedProduct == null)
+            {
+                return;
+            }
+            var vm = new ProductFormViewModel
+            {
+                Product = ((MainViewModel)DataContext).SelectedProduct
+            };
+            ((MainViewModel)DataContext).Products.Remove(vm.Product);
+        }
+        private void CartSortABCSelected(object sender, RoutedEventArgs e)
+        {
+            _vm.CartListOrderABC();
+        }
+
+        private void CartOrderPriceAscSelect(object sender, RoutedEventArgs e)
+        {
+            _vm.CartListOrderPriceAsc();
+        }
+
+        private void CartOrderPriceDesc(object sender, RoutedEventArgs e)
+        {
+            _vm.CartListOrderPriceDesc();
+        }
+
+        private void CartOrderQuantityAsc(object sender, RoutedEventArgs e)
+        {
+            _vm.CartListOrderQuantityAsc();
+        }
+
+        private void CartOrderQuantityDesc(object sender, RoutedEventArgs e)
+        {
+            _vm.CartListOrderQuantityDesc();
         }
     }
 }
