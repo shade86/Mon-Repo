@@ -8,3 +8,12 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.csprojResolveAssemblyReference.cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.dll
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.pdb
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\Mon-Repo.Dal.dll.config
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\EntityFramework.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\System.Data.SQLite.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\EntityFramework.xml
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\System.Data.SQLite.xml

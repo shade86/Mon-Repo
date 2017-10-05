@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using Mon_Repo.Dal;
+using System.Windows;
 
 namespace Mon_Repo
 {
@@ -13,19 +14,30 @@ namespace Mon_Repo
         //public ObservableCollection<User> Users { get; set; }
         public string LoginName { get; set; }
         public string LoginPassword { get; set; }
-        public User AuthenticatedUser { get; private set; }      
+        public User AuthenticatedUser { get; private set; }
+
         public bool Login()
         {
-            var ctx = new Context();
-            foreach (var user in ctx.Users)
-                if (user.Username == LoginName &&
-                    user.Password == LoginPassword)
+            var manager = new DataManager();
+            var user = manager.GetUser(LoginName, LoginPassword);
+            if (user == null)
             {
-                    AuthenticatedUser = new User(user);
-                    return true;
+                return false;
             }
-            return false;
+            AuthenticatedUser = new User(user);
+            return true;
+        }
+        public bool Register()
+        {
+            var manager = new DataManager();
+            var user = manager.GetUser(LoginName, LoginPassword);
+            if (user == null)
+                return false;
+            AuthenticatedUser = new User(user);
+            MessageBox.Show("Sikeres regisztráció");
+            return true;
         }
     }
+
 }
 

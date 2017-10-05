@@ -18,9 +18,11 @@ namespace Mon_Repo
         public User AuthenticatedUser { get; set; }
         public MainViewModel()
         {
-            Products = new ObservableCollection<Product>();
-            var ctx = new Context();
-            foreach (var product in ctx.Products)
+        Products = new ObservableCollection<Product>();
+            //DB szerkesztés
+            // var ctx = new Context();
+            var manager = new DataManager();
+            foreach (var product in manager.GetProductList())
             {
                 Products.Add(new Product(product));
             }

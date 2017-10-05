@@ -10,19 +10,21 @@ namespace Mon_Repo
     public class PurchasesViewModel: BaseModel
     {
         public User AuthenticatedUser { get; set; }
-        public List<Purchase>Purchases { get; set; }
+        public List<Purchase>Purchases { get; }
         public PurchasesViewModel(User user)
         {
-            AuthenticatedUser = user;
-            Purchases = new List<Purchase>();
-            Context context = new Context();
-            context.Purchases.ForEach(x => Purchases.Add(new Purchase
-            {
-                Timestamp = x.Timestamp.ToString("f") , 
-                SumPrice = x.Products.Sum(y => y.Price * y.Quantity),
-                SumCount = x.Products.Sum(y => y.Quantity)
+            var manager = new DataManager();
+            //var ctx = new Context();
+            Purchases = manager.GetPurchasesOfUser(user.Username)
 
-            }));
+                .Select(x => new Purchase
+                {
+                    //Felhasználási réteg, az adatbázis kiadja az adatot, utána már nincs vele kapcsolat
+                    Timestamp = x.Timestamp.ToString("f"),
+                    SumPrice = x.Products.Sum(y => y.Price * y.Quantity),
+                    SumCount = x.Products.Sum(y => y.Quantity)
+                }).ToList();
         }
+
     }
 }

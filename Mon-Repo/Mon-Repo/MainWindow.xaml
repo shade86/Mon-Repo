@@ -7,20 +7,26 @@
         mc:Ignorable="d"
         Title="Mon Repo Webshop Alkalmazás" Height="550" Width="1024" ResizeMode="NoResize" Background="#FF392E46">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="76*"/>
-            <ColumnDefinition Width="433*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF7F6CFF" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        <ComboBox SelectedIndex="0" Margin="170,64,0,434" VerticalAlignment="Center" Width="180" Height="23" HorizontalAlignment="Left" BorderBrush="White" Foreground="Black" Background="#FFD61A1A" Grid.Column="1" >
+            <ComboBoxItem Content="Rendezés szempontja" IsEnabled="False"/>
+            <ComboBoxItem Content="Név szerint" Selected="SortABCSelected"/>
+            <ComboBoxItem Content="Ár szerint növekvő" Selected="OrderPriceAscSelect"/>
+            <ComboBoxItem Content="Ár szerint csökkenő" Selected="OrderPriceDesc"/>
+            <ComboBoxItem Content="Mennyiség szerint növekvő" Selected="OrderQuantityAsc"/>
+            <ComboBoxItem Content="Mennyiség szerint csökkenő" Selected="OrderQuantityDesc"/>
+        </ComboBox>
+        <ComboBox SelectedIndex="0" VerticalAlignment="Center" Width="180" Height="23" HorizontalAlignment="Left" BorderBrush="White" Foreground="Black" Background="Red" Grid.Column="1" Margin="560,64,0,434" >
+            <ComboBoxItem Content="Rendezés szempontja" IsEnabled="False"/>
+            <ComboBoxItem Content="Név szerint" Selected="CartSortABCSelected"/>
+            <ComboBoxItem Content="Ár szerint növekvő" Selected="CartOrderPriceAscSelect"/>
+            <ComboBoxItem Content="Ár szerint csökkenő" Selected="CartOrderPriceDesc"/>
+            <ComboBoxItem Content="Mennyiség szerint növekvő" Selected="CartOrderQuantityAsc"/>
+            <ComboBoxItem Content="Mennyiség szerint csökkenő" Selected="CartOrderQuantityDesc"/>
+        </ComboBox>
         <Border BorderBrush="White" CornerRadius="20" Background="#FF392E46" BorderThickness="0" HorizontalAlignment="Left" Height="63" Margin="1,54,0,404" Width="154" Grid.Column="1"/>
-        <Border Background="#FF392E46" BorderThickness="1" HorizontalAlignment="Left" Height="441" Margin="0,80,0,0" VerticalAlignment="Top" Width="152"/>
+        <Border Background="#FF392E46" CornerRadius="20" BorderThickness="1" HorizontalAlignment="Left" Height="477" Margin="0,80,0,-36" VerticalAlignment="Top" Width="152"/>
         <Border BorderBrush="White" CornerRadius="20" Background="#FF392E46" BorderThickness="0" HorizontalAlignment="Left" Height="63" Margin="391,51,0,407" Width="154" Grid.Column="1"/>
-
+        <Border Background="#FF392E46" BorderThickness="1" HorizontalAlignment="Left" Height="54" Margin="117,80,0,0" VerticalAlignment="Top" Width="35"/>
         <ListBox SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}" HorizontalAlignment="Left" Height="419" Margin="0,80,0,0" VerticalAlignment="Top" Width="350" MouseDoubleClick="BuyProduct" Grid.Column="1">
             <ListBox.Effect>
                 <DropShadowEffect/>
@@ -50,9 +56,20 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Label Content="{Binding AuthenticatedUser.Username}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Foreground="#FFCDBBBB" FontSize="16" Width="132" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Height="38"/>
-        <Label Content="Megvásárolható termékek:" HorizontalAlignment="Left" Margin="3,54,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFCDBBBB" Grid.Column="1"/>
-        <Label Content="Kosár tartalma:" HorizontalAlignment="Left" Margin="393,54,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFCDBBBB" Grid.Column="1"/>
-        <Label x:Name="LogoutLabel" Content="Kijelentkezés" HorizontalContentAlignment="Center" Foreground="#FFCDBBBB" HorizontalAlignment="Left" Margin="34,436,0,0" VerticalAlignment="Top" Width="86" Cursor="Hand" MouseLeftButtonDown="LogoutClick" FontFamily="Arial" FontWeight="ExtraLight"/>
+        <Label Content="Megvásárolható termékek:" HorizontalAlignment="Left" Margin="3,54,0,0" VerticalAlignment="Top" Width="152" Foreground="#FFCDBBBB" Grid.Column="1"/>
+        <Label Content="Kosár tartalma:" HorizontalAlignment="Left" Margin="393,54,0,0" VerticalAlignment="Top" Width="152" Foreground="#FFCDBBBB" Grid.Column="1"/>
+        <Label x:Name="LogoutLabel" Content="Kijelentkezés" HorizontalContentAlignment="Center" Foreground="#FFCDBBBB" HorizontalAlignment="Left" Margin="3,436,0,0" VerticalAlignment="Top" Width="144" Cursor="Hand" MouseLeftButtonDown="LogoutClick" FontFamily="Arial" FontWeight="ExtraLight">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D1725" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
         <Label Content="{Binding AuthenticatedUser.Money}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ContentStringFormat="$ 0 Ft" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Width="132" Foreground="#FFCDBBBB" FontFamily="Arial" FontSize="14" Height="29" FontWeight="ExtraLight"/>
         <!-- <Label Content="Össz. költség:" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="350"/>
         <Label Content="{Binding Source=Statistics.SumSpent, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="0 Ft" HorizontalAlignment="Left" Margin="542,466,0,0" VerticalAlignment="Top" Width="114" Height="26"/>-->
@@ -100,24 +117,23 @@
                 </Style>
             </Label.Style>
         </Label>
-        <StackPanel Grid.ColumnSpan="2">
-            <ComboBox SelectedIndex="0" Margin="322,58,0,0" VerticalAlignment="Center" Width="180" Height="23" HorizontalAlignment="Left" BorderBrush="White" Foreground="Black" Background="Red" >
-                <ComboBoxItem Content="Rendezés szempontja" IsEnabled="False"/>
-                <ComboBoxItem Content="Név szerint" Selected="SortABCSelected"/>
-                <ComboBoxItem Content="Ár szerint növekvő" Selected="OrderPriceAscSelect"/>
-                <ComboBoxItem Content="Ár szerint csökkenő" Selected="OrderPriceDesc"/>
-                <ComboBoxItem Content="Mennyiség szerint növekvő" Selected="OrderQuantityAsc"/>
-                <ComboBoxItem Content="Mennyiség szerint csökkenő" Selected="OrderQuantityDesc"/>
-            </ComboBox>
-            <ComboBox SelectedIndex="0" Margin="712,-23,0,0" VerticalAlignment="Center" Width="180" Height="23" HorizontalAlignment="Left" BorderBrush="White" Foreground="Black" Background="Red" >
-                <ComboBoxItem Content="Rendezés szempontja" IsEnabled="False"/>
-                <ComboBoxItem Content="Név szerint" Selected="CartSortABCSelected"/>
-                <ComboBoxItem Content="Ár szerint növekvő" Selected="CartOrderPriceAscSelect"/>
-                <ComboBoxItem Content="Ár szerint csökkenő" Selected="CartOrderPriceDesc"/>
-                <ComboBoxItem Content="Mennyiség szerint növekvő" Selected="CartOrderQuantityAsc"/>
-                <ComboBoxItem Content="Mennyiség szerint csökkenő" Selected="CartOrderQuantityDesc"/>
-            </ComboBox>
-        </StackPanel>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="433*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7F6CFF" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        
+
+  
+     
     </Grid>
 
 </Window>
