@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Mon_Repo.Dal;
 
 namespace Mon_Repo
 {
@@ -19,7 +20,11 @@ namespace Mon_Repo
     /// </summary>
     public partial class LoginWindow : Window
     {
+        public List<UserDbModel> Users { get; }
         LoginViewModel ViewModel = new LoginViewModel();
+        DataManager manager = new DataManager();
+        public string username { get; set; }
+        public string password { get; set; }
         public LoginWindow()
         {
             InitializeComponent();
@@ -29,7 +34,8 @@ namespace Mon_Repo
         }
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.LoginPassword = PasswordTextBox.Password;
+            ViewModel.password = PasswordTextBox.Password;
+            //ViewModel.username = UserTextBox.Text;
             if (ViewModel.Login())
                 Close();
             else
@@ -95,6 +101,16 @@ namespace Mon_Repo
                 }
                 else return;
             }
+        }
+        private void DbClick(object sender, RoutedEventArgs e)
+        {
+            //manager.Register(username, password);
+            manager.DbShow();
+        }
+
+        private void RegClick(object sender, RoutedEventArgs e)
+        {
+            manager.Register(username, password);
         }
     }
 }

@@ -12,29 +12,19 @@ namespace Mon_Repo
     public class LoginViewModel : BaseModel
     {
         //public ObservableCollection<User> Users { get; set; }
-        public string LoginName { get; set; }
-        public string LoginPassword { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
         public User AuthenticatedUser { get; private set; }
 
         public bool Login()
         {
             var manager = new DataManager();
-            var user = manager.GetUser(LoginName, LoginPassword);
+            var user = manager.GetUser(username, password);
             if (user == null)
             {
                 return false;
             }
             AuthenticatedUser = new User(user);
-            return true;
-        }
-        public bool Register()
-        {
-            var manager = new DataManager();
-            var user = manager.GetUser(LoginName, LoginPassword);
-            if (user == null)
-                return false;
-            AuthenticatedUser = new User(user);
-            MessageBox.Show("Sikeres regisztráció");
             return true;
         }
     }

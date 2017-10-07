@@ -55,3 +55,11 @@ C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\System.Dat
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\EntityFramework.xml
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\System.Data.SQLite.xml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\EntityFramework.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\System.Data.SQLite.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\EntityFramework.xml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\bin\Debug\System.Data.SQLite.xml

@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Mon_Repo.Dal
 {
     public class DataManager
     {
-        readonly Context _ctx; //csak a Dalon belül létezik, kifelé DateManagereken keresztül kommunikál, közvetít. Elfedi az adatbázist.
+        public string username { get; set; }
+        public string password { get; set; }
+        readonly Context _ctx; 
         public DataManager()
         {
-            _ctx = new Context();   //Ha a username asdf nem létezik az adatbázisban akkor létrehozza azt. WPFApp4hez is hozzá kell adni a nugetet, és appconfigba name beírni
+            
+            _ctx = new Context();   
             if (!_ctx.Users.Any(x => x.Username == "asdf"))
             {
                 _ctx.Users.Add(new UserDbModel
@@ -25,8 +29,42 @@ namespace Mon_Repo.Dal
             }
      
         }
+        //public bool Register(string username, string password)
+        //{
+        //    if (_ctx.Users.Any(x => x.Username == username))
+        //        return false;
+        //    else
+        //    {
+        //        _ctx.Users.Add(new UserDbModel
+        //        {
+        //            Username = username,
+        //            Password = password,
+        //            Money = 1000
+        //        });
+        //        _ctx.SaveChanges();
+        //    }   return true;
+        //}
+        public void Register(string username, string password)
+        {
+            if (_ctx.Users.Any(x => x.Username == username))
+		//throw new ArgumentException(nameof(username));
 
+            _ctx.Users.Add(new UserDbModel
+                    {
+                      Username = username,
+                      Password = password,
+                      Money = 1000
+                     });
 
+            _ctx.SaveChanges();
+        }
+        public void DbShow()
+        {
+            foreach (var item in _ctx.Users)
+            {
+                MessageBox.Show(item.Username);
+            }
+        }
         public IEnumerable<ProductDbModel> GetProductList()
         {
             return _ctx.ProductList.OrderBy(x => x.Name);
