@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mon_Repo.Dal;
 using System.Windows;
+using System.Security.Cryptography;
 
 namespace Mon_Repo
 {
@@ -15,7 +16,6 @@ namespace Mon_Repo
         public string username { get; set; }
         public string password { get; set; }
         public User AuthenticatedUser { get; private set; }
-
         public bool Login()
         {
             var manager = new DataManager();
@@ -26,6 +26,16 @@ namespace Mon_Repo
             }
             AuthenticatedUser = new User(user);
             return true;
+        }
+        public static string GetMd5Hash(MD5 md5Hash, string input)
+        {
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
         }
     }
 

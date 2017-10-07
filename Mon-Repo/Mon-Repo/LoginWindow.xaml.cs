@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Mon_Repo.Dal;
+using System.Security.Cryptography;
 
 namespace Mon_Repo
 {
@@ -23,8 +24,9 @@ namespace Mon_Repo
         public List<UserDbModel> Users { get; }
         LoginViewModel ViewModel = new LoginViewModel();
         DataManager manager = new DataManager();
-        public string username { get; set; }
+        //KELL?????????????
         public string password { get; set; }
+        
         public LoginWindow()
         {
             InitializeComponent();
@@ -35,7 +37,11 @@ namespace Mon_Repo
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             ViewModel.password = PasswordTextBox.Password;
-            //ViewModel.username = UserTextBox.Text;
+            ViewModel.username = UserTextBox.Text;
+            using (MD5 md5Hash = MD5.Create())
+            {
+                ViewModel.password = LoginViewModel.GetMd5Hash(md5Hash, PasswordTextBox.Password);
+            }
             if (ViewModel.Login())
                 Close();
             else
@@ -86,7 +92,7 @@ namespace Mon_Repo
 
         private void PasswordTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            if (PasswordTextBox.Password == "")
+           if (PasswordTextBox.Password == "")
             PasswordTextBox.Password = "Jelszó";
         }
 
@@ -110,7 +116,7 @@ namespace Mon_Repo
 
         private void RegClick(object sender, RoutedEventArgs e)
         {
-            manager.Register(username, password);
+            manager.Register(ViewModel.username, ViewModel.password);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Mon_Repo.Dal
         public Context()
             : base("name=Context")
         {
+        
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

@@ -9,14 +9,12 @@ namespace Mon_Repo.Dal
 {
     public class DataManager
     {
-        public string username { get; set; }
-        public string password { get; set; }
         readonly Context _ctx; 
         public DataManager()
         {
             
             _ctx = new Context();   
-            if (!_ctx.Users.Any(x => x.Username == "asdf"))
+           /* if (!_ctx.Users.Any(x => x.Username == "asdf"))
             {
                 _ctx.Users.Add(new UserDbModel
                 {
@@ -26,7 +24,7 @@ namespace Mon_Repo.Dal
                 }
                     );
                 _ctx.SaveChanges();
-            }
+            }*/
      
         }
         //public bool Register(string username, string password)
@@ -46,7 +44,7 @@ namespace Mon_Repo.Dal
         //}
         public void Register(string username, string password)
         {
-            if (_ctx.Users.Any(x => x.Username == username))
+            if (!_ctx.Users.Any(x => x.Username == username))
 		//throw new ArgumentException(nameof(username));
 
             _ctx.Users.Add(new UserDbModel
