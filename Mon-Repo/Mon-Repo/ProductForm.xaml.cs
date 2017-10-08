@@ -27,10 +27,13 @@ namespace Mon_Repo
             InitializeComponent();
         }
             public Product Product { get; set; }
-
+        public List<ProductDbModel> Products { get; set; }
         DataManager manager = new DataManager();
         private void SaveProductClick(object sender, RoutedEventArgs e)
         {
+            ViewModel.productname = NameTextbox.Text;
+            ViewModel.productprice = int.Parse(PriceTextbox.Text);
+            ViewModel.productquantity = int.Parse(QuantityTextbox.Text);
             manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
                 Close();
             /*else

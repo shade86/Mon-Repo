@@ -65,8 +65,6 @@ namespace Mon_Repo.Dal
                 Quantity = productquantity,
                 Price = productprice
                 //BuyDate = Product.BuyDate
-
-
             });
             _ctx.SaveChanges();
         }
