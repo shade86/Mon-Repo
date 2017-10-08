@@ -38,10 +38,10 @@ namespace Mon_Repo
         {
             ViewModel.password = PasswordTextBox.Password;
             ViewModel.username = UserTextBox.Text;
-            using (MD5 md5Hash = MD5.Create())
+           /* using (MD5 md5Hash = MD5.Create())
             {
                 ViewModel.password = LoginViewModel.GetMd5Hash(md5Hash, PasswordTextBox.Password);
-            }
+            }*/
             if (ViewModel.Login())
                 Close();
             else

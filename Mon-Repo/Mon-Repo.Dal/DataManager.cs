@@ -13,7 +13,8 @@ namespace Mon_Repo.Dal
         public DataManager()
         {
             
-            _ctx = new Context();   
+            _ctx = new Context();
+              
            /* if (!_ctx.Users.Any(x => x.Username == "asdf"))
             {
                 _ctx.Users.Add(new UserDbModel
@@ -56,6 +57,20 @@ namespace Mon_Repo.Dal
 
             _ctx.SaveChanges();
         }
+        public void AddProductDb(string productname, int productquantity, int productprice)
+        {
+            _ctx.ProductList.Add(new ProductDbModel
+            {
+                Name = productname,
+                Quantity = productquantity,
+                Price = productprice
+                //BuyDate = Product.BuyDate
+
+
+            });
+            _ctx.SaveChanges();
+        }
+
         public void DbShow()
         {
             foreach (var item in _ctx.Users)
@@ -73,6 +88,20 @@ namespace Mon_Repo.Dal
             try
             {
                 return _ctx.Users.SingleOrDefault(x => x.Username == username && x.Password == password); //singleordefault: csak egy érték felel meg a kritériumoknak 
+
+            }
+            catch (InvalidOperationException)
+            {
+
+                return null;
+            }
+        }
+
+        public ProductDbModel GetProducts(string productname, int productquantity, int productprice)
+        {
+            try
+            {
+                return _ctx.ProductList.SingleOrDefault(x => x.Name == productname && x.Quantity == productquantity && x.Price == productprice); //singleordefault: csak egy érték felel meg a kritériumoknak 
 
             }
             catch (InvalidOperationException)

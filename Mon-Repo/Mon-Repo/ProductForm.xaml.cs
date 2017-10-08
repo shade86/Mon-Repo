@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Mon_Repo.Dal;
+using Mon_Repo;
 
 namespace Mon_Repo
 {
@@ -19,17 +21,20 @@ namespace Mon_Repo
     /// </summary>
     public partial class ProductForm : Window
     {
+        ProductFormViewModel ViewModel = new ProductFormViewModel();
         public ProductForm()
         {
             InitializeComponent();
         }
+            public Product Product { get; set; }
 
+        DataManager manager = new DataManager();
         private void SaveProductClick(object sender, RoutedEventArgs e)
         {
-            if (((ProductFormViewModel)DataContext).Validate())
+            manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
                 Close();
-            else
-                MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");
+            /*else
+                MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");*/
         }
 
         private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
