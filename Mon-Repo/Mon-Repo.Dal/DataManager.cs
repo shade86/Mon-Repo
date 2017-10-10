@@ -81,6 +81,10 @@ namespace Mon_Repo.Dal
             return _ctx.ProductList.OrderBy(x => x.Name);
         }
 
+        public IEnumerable<UserDbModel> GetUserList()
+        {
+            return _ctx.Users.OrderBy(x => x.Username);
+        }
         public UserDbModel GetUser(string username, string password)
         {
             try

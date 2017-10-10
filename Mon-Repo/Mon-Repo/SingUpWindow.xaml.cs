@@ -23,7 +23,6 @@ namespace Mon_Repo
     {
         SignUpViewModel sw = new SignUpViewModel();
         DataManager manager = new DataManager();
-        
         public SingUpWindow()
         {
             DataContext = sw;
@@ -34,10 +33,14 @@ namespace Mon_Repo
         {
             if (SignUpPassword1.Password == SignUpPassword2.Password)
             {
-                var password1 = SignUpPassword1.Password;
-                manager.Register(sw.username, password1);
-                MessageBox.Show("Sikeres Regisztráció");
-                Close();
+                if (sw.SignUpValidate() == true)
+                {
+                    var password1 = SignUpPassword1.Password;
+                    manager.Register(sw.username, password1);
+                    MessageBox.Show("Sikeres Regisztráció");
+                    Close();
+                }
+                else MessageBox.Show("A felhasználónévnek legalább 3 karakternek kell lennie!");
             }
             else
                 MessageBox.Show("A beírt jelszavak nem egyeznek");

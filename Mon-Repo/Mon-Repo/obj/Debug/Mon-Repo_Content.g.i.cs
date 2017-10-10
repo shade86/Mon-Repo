@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/signin.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/bitmap1.bmp")]
 
 

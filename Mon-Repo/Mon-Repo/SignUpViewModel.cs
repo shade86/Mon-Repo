@@ -9,5 +9,13 @@ namespace Mon_Repo
     public class SignUpViewModel:BaseModel
     {
         public string username { get; set; }
+        public bool SignUpValidate()
+        {
+
+            return username != null &&
+                username.Length > 0;
+                
+                
+        }
     }
 }

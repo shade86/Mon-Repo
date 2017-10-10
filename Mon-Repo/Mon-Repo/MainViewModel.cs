@@ -12,13 +12,15 @@ namespace Mon_Repo
 {
     public class MainViewModel : BaseModel
     {
+        public ObservableCollection<User>Users { get; set; }
         public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<Purchase> Purchases { get; set; }
         public Product SelectedProduct { get; set; }
         public Product CartSelectedProduct { get; set; }
         public User AuthenticatedUser { get; set; }
         public MainViewModel()
         {
-        Products = new ObservableCollection<Product>();
+            Products = new ObservableCollection<Product>();
             //DB szerkesztés
             // var ctx = new Context();
             var manager = new DataManager();
@@ -26,6 +28,22 @@ namespace Mon_Repo
             {
                 Products.Add(new Product(product));
             }
+
+
+            Users = new ObservableCollection<User>();
+            foreach (var user in manager.GetUserList())
+            {
+                Users.Add(new User(user));
+            }
+
+
+            //TODO purchases
+            /*Purchases = new ObservableCollection<Purchase>();
+            foreach (var purchase in manager.GetPurchasesOfUser())
+            {
+                Purchases.Add(new Purchase(purchase));
+            }*/
+
         }
         public string AddCart()
         {

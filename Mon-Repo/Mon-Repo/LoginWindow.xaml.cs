@@ -23,6 +23,7 @@ namespace Mon_Repo
     public partial class LoginWindow : Window
     {
         public List<UserDbModel> Users { get; }
+        AdminWindow aw = new AdminWindow();
         SingUpWindow sw = new SingUpWindow();
         LoginViewModel ViewModel = new LoginViewModel();
         DataManager manager = new DataManager();
@@ -119,7 +120,13 @@ namespace Mon_Repo
         {
 
             sw.ShowDialog();
-            //DataContext = _vm;
+            DataContext = new SignUpViewModel();
+        }
+
+        private void AdminClick(object sender, MouseButtonEventArgs e)
+        {
+            aw.ShowDialog();
+
         }
     }
 }
