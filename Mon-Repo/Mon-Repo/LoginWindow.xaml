@@ -20,16 +20,16 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+
         </Border>
         <Button x:Name="Db" Content="Db" HorizontalAlignment="Left" Height="36" Margin="89.6,264,0,0" VerticalAlignment="Top" Width="60" Click="DbClick" Grid.Column="1"/>
-        <Button x:Name="Reg" Content="Reg" HorizontalAlignment="Left" Height="36" Margin="16.2,234.2,0,0" VerticalAlignment="Top" Width="60" Click="RegClick"/>
 
         <Image HorizontalAlignment="Left" Height="53" Margin="124,56,0,0" VerticalAlignment="Top" Width="54" Source="Resources/signin.png" Grid.ColumnSpan="2"/>
         <!--  <Label Content="Username:" HorizontalAlignment="Left" Height="27" Margin="10,20,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Password:" HorizontalAlignment="Left" Height="27" Margin="10,52,0,0" VerticalAlignment="Top" Width="113"/>-->
-        <Button Content="Bejelentkezés" IsDefault="True" HorizontalAlignment="Left" Height="25" Margin="107,187,0,0" VerticalAlignment="Top" Width="86" Click="LoginClick" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
-        </Button>
+        <Button Content="Bejelentkezés" IsDefault="True" HorizontalAlignment="Left" Height="25" Margin="54,187,0,0" VerticalAlignment="Top" Width="86" Click="LoginClick" RenderTransformOrigin="0.5,0.5"/>
         <!--<PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="19" Margin="128,52,0,0" VerticalAlignment="Top" Width="130"/>-->
+        <Button x:Name="OpenSignUpWindow" Content="Új felhasználó" HorizontalAlignment="Left" Height="25" Margin="10,187,0,0" VerticalAlignment="Top" Width="86" Click="NewUserClick" Grid.Column="1"/>
         <Button x:Name="ExitButton" Content="Kilépés" HorizontalAlignment="Left" Margin="107,217,0,0" VerticalAlignment="Top" Width="87" Height="23" Click="ExitClick" MouseEnter="ExitMouseEnter" MouseLeave="ExitMouseLeave" Grid.ColumnSpan="2" RenderTransformOrigin="0.497,0.53">
             <!--Button animáció-->
             <!--  <Button.RenderTransform>

@@ -91,6 +91,10 @@
     <Compile Include="PurchasesWindow.xaml.cs">
       <DependentUpon>PurchasesWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SignUpViewModel.cs" />
+    <Compile Include="SingUpWindow.xaml.cs">
+      <DependentUpon>SingUpWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Statistics.cs" />
     <Compile Include="User.cs" />
     <Page Include="LoginWindow.xaml">
@@ -120,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PurchasesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingUpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

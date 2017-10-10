@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Mon_Repo.Dal;
 using System.Security.Cryptography;
+using Mon_Repo;
 
 namespace Mon_Repo
 {
@@ -22,6 +23,7 @@ namespace Mon_Repo
     public partial class LoginWindow : Window
     {
         public List<UserDbModel> Users { get; }
+        SingUpWindow sw = new SingUpWindow();
         LoginViewModel ViewModel = new LoginViewModel();
         DataManager manager = new DataManager();
         //KELL?????????????
@@ -113,10 +115,11 @@ namespace Mon_Repo
             //manager.Register(username, password);
             manager.DbShow();
         }
-
-        private void RegClick(object sender, RoutedEventArgs e)
+        private void NewUserClick(object sender, RoutedEventArgs e)
         {
-            manager.Register(ViewModel.username, ViewModel.password);
+
+            sw.ShowDialog();
+            //DataContext = _vm;
         }
     }
 }

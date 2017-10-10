@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\
 Mon_Repo
 none
 false
 DEBUG;TRACE
-C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\App.xaml
-5-1250713991
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\App.xaml
+6-676115255
 
-22-1793027507
-20-1986677193
-LoginWindow.xaml;MainWindow.xaml;ProductForm.xaml;PurchasedProducts.xaml;PurchasesWindow.xaml;
+24-1017782264
+20-1839557629
+LoginWindow.xaml;MainWindow.xaml;ProductForm.xaml;PurchasedProducts.xaml;PurchasesWindow.xaml;SingUpWindow.xaml;
 
-True
+False
 
