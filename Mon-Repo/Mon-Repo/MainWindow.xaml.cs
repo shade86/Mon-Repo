@@ -91,12 +91,13 @@ namespace Mon_Repo
         private void PurchaseClick(object sender, RoutedEventArgs e)
         {
             _vm.Purchase();
-            _vm.ClearCart();
+            _vm.ClearCartPurchase();
         }
 
         private void ClearCartClick(object sender, RoutedEventArgs e)
         {
             _vm.ClearCart();
+            
         }
 
         private void ComboBoxItem_SourceUpdated(object sender, DataTransferEventArgs e)

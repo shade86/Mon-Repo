@@ -44,6 +44,7 @@ namespace Mon_Repo
                 Purchases.Add(new Purchase(purchase));
             }*/
         }
+       
 
         public void Delete()
         {
@@ -62,6 +63,8 @@ namespace Mon_Repo
             AuthenticatedUser.ProductList.Clear();
         }
 
+        public int sum = 0;
+
         public string AddCart()
         {
             if (SelectedProduct.Price > AuthenticatedUser.Money)
@@ -70,15 +73,21 @@ namespace Mon_Repo
                 return "Nincs elég termék";
             var product = FindProduct(SelectedProduct.Name);
             if (product == null)
+            {
                 AuthenticatedUser.ProductList.Add(new Product
                 {
                     Name = SelectedProduct.Name,
                     Price = SelectedProduct.Price,
                     Quantity = 1
                 });
+                AuthenticatedUser.Money -= SelectedProduct.Price;
+                sum = sum + SelectedProduct.Price;
+            }
             else
             {
                 product.Quantity++;
+                AuthenticatedUser.Money -= SelectedProduct.Price;
+                sum = sum + SelectedProduct.Price;
             }
             SelectedProduct.Quantity--;
             return null;
@@ -152,7 +161,22 @@ namespace Mon_Repo
                     item2.Quantity++;
             }
                 AuthenticatedUser.ProductList.Clear();
+            AuthenticatedUser.Money += sum;
+            sum = 0;
             }
+        public void ClearCartPurchase()
+        {
+            foreach (var item in AuthenticatedUser.ProductList)
+                foreach (var item2 in Products)
+                {
+                    if (item.Name == item2.Name)
+                        item2.Quantity++;
+                }
+            AuthenticatedUser.ProductList.Clear();
+            sum = 0;
+        }
+
+
         public void ListOrderABC()
         {
             var list = Products.Cast<Product>().OrderBy(item => item.Name).ToList();
