@@ -90,12 +90,8 @@ namespace Mon_Repo
 
         private void PurchaseClick(object sender, RoutedEventArgs e)
         {
-            _vm.PurchaseFromCart();
-            if (_vm.AuthenticatedUser.Money > Statistics.SumSpent(_vm.AuthenticatedUser.ProductList))
-                foreach (var item in _vm.AuthenticatedUser.ProductList)
-                {
-                    MessageBox.Show($"Megvásárolt termék(ek): \n Termék megnevezése: {item.Name}\n Termék ára: {item.Price}\n Megvásárolt darabszám: {item.Quantity}");
-                } 
+            _vm.Purchase();
+            _vm.ClearCart();
         }
 
         private void ClearCartClick(object sender, RoutedEventArgs e)
@@ -160,6 +156,7 @@ namespace Mon_Repo
             var vm = new ProductFormViewModel
 
             {
+                
                 IsEdit = true,
                 Product = ((MainViewModel)DataContext).SelectedProduct
             };
@@ -173,16 +170,8 @@ namespace Mon_Repo
 
         private void DeleteProductClick(object sender, MouseButtonEventArgs e)
         {
-            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
-            if (SelectedProduct == null)
-            {
-                return;
-            }
-            var vm = new ProductFormViewModel
-            {
-                Product = ((MainViewModel)DataContext).SelectedProduct
-            };
-            ((MainViewModel)DataContext).Products.Remove(vm.Product);
+            _vm.Delete();
+            MessageBox.Show("Termék törölve");
         }
         private void CartSortABCSelected(object sender, RoutedEventArgs e)
         {

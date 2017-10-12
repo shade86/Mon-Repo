@@ -43,8 +43,25 @@ namespace Mon_Repo
             {
                 Purchases.Add(new Purchase(purchase));
             }*/
-
         }
+
+        public void Delete()
+        {
+            var manager = new DataManager();
+            manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
+        }
+
+        public void Purchase()
+        {
+            var manager = new DataManager();
+            foreach (var product in AuthenticatedUser.ProductList)
+            {
+                manager.Buy(product.Name, product.Quantity, product.Price, AuthenticatedUser.Username);
+               
+            }
+            AuthenticatedUser.ProductList.Clear();
+        }
+
         public string AddCart()
         {
             if (SelectedProduct.Price > AuthenticatedUser.Money)

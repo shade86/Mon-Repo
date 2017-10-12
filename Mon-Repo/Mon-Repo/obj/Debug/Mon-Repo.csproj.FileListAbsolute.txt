@@ -69,3 +69,5 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\SingUpWindow.baml
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\AdminWindow.g.cs
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\AdminWindow.baml
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\AdminWindow.g.cs
+C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\obj\Debug\AdminWindow.baml

@@ -43,6 +43,37 @@ namespace Mon_Repo.Dal
         //        _ctx.SaveChanges();
         //    }   return true;
         //}
+
+        public void DeleteProduct(string productname, int productprice)
+        {
+            foreach (var product in _ctx.ProductList)
+            {
+                if (productname == product.Name && productprice == product.Price)
+                {
+                    _ctx.ProductList.Remove(product);
+                }
+            }
+            _ctx.SaveChanges();
+        }
+
+        public void Buy(string productname, int productquantity, int productprice, string username)
+        {
+            int Sumprice = 0;
+            foreach (var product in _ctx.ProductList)
+            {
+                if (productname == product.Name && productprice == product.Price)
+                {
+                    product.Quantity -= productquantity;
+                    Sumprice = Sumprice + (productprice * productquantity);
+                }
+            }
+            foreach (var user in _ctx.Users)
+            {
+                if (username == user.Username)
+                    user.Money = user.Money - Sumprice;
+            }
+            _ctx.SaveChanges();
+        }
         public void Register(string username, string password)
         {
             if (!_ctx.Users.Any(x => x.Username == username))

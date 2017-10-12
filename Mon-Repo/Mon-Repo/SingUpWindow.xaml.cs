@@ -31,19 +31,10 @@ namespace Mon_Repo
 
         private void SignUpClick(object sender, RoutedEventArgs e)
         {
-            if (SignUpPassword1.Password == SignUpPassword2.Password)
-            {
-                if (sw.SignUpValidate() == true)
-                {
-                    var password1 = SignUpPassword1.Password;
-                    manager.Register(sw.username, password1);
-                    MessageBox.Show("Sikeres Regisztráció");
-                    Close();
-                }
-                else MessageBox.Show("A felhasználónévnek legalább 3 karakternek kell lennie!");
-            }
-            else
-                MessageBox.Show("A beírt jelszavak nem egyeznek");
+            string password1 = SignUpPassword1.Password;
+            string password2 = SignUpPassword2.Password;
+            sw.Reg(password1, password2);
+
         }
     }
 }
