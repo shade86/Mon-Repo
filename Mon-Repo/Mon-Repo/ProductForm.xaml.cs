@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Mon_Repo.Dal;
 using Mon_Repo;
+using System.Text.RegularExpressions;
 
 namespace Mon_Repo
 {
@@ -31,13 +32,20 @@ namespace Mon_Repo
         DataManager manager = new DataManager();
         private void SaveProductClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.productname = NameTextbox.Text;
-            ViewModel.productprice = int.Parse(PriceTextbox.Text);
-            ViewModel.productquantity = int.Parse(QuantityTextbox.Text);
-            manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
+            var vm = new MainViewModel();
+            var pfvm = new ProductFormViewModel();
+           // if (pfvm.Validate() == true)
+          //  {
+                ViewModel.productname = NameTextbox.Text;
+                ViewModel.productprice = int.Parse(PriceTextbox.Text);
+                ViewModel.productquantity = int.Parse(QuantityTextbox.Text);
+                manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
+                vm.AddToProducts();
                 Close();
-            /*else
-                MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");*/
+           
+            //   }
+            //   else
+            //   MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");
         }
 
         private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -47,6 +55,18 @@ namespace Mon_Repo
                 MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");
 
 
+        }
+
+        private void PriceTextBoxInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void QuantityTextBoxInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

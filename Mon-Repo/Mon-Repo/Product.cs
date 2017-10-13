@@ -14,7 +14,7 @@ namespace Mon_Repo
             Name = dbModel.Name;
             Price = dbModel.Price;
             Quantity = dbModel.Quantity;
-            BuyDate = dbModel.BuyDate;
+            //BuyDate = dbModel.BuyDate;
         }
         public Product()
         {

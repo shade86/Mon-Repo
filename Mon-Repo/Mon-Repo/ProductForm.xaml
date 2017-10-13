@@ -10,9 +10,9 @@
         <Label x:Name="ProductLabel" Content="Termék megnevezése:" HorizontalAlignment="Left" Height="27" Margin="10,66,0,0" VerticalAlignment="Top" Width="137"/>
         <Label x:Name="PriceLabel" Content="Termék ára:" HorizontalAlignment="Left" Height="27" Margin="10,103,0,0" VerticalAlignment="Top" Width="137"/>
         <TextBox x:Name="NameTextbox" HorizontalAlignment="Left" Height="32" Margin="147,61,0,0" TextWrapping="Wrap" Text="{Binding productname, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="137"/>
-        <TextBox x:Name="PriceTextbox" HorizontalAlignment="Left" Height="32" Margin="147,98,0,0" TextWrapping="Wrap" Text="{Binding productprice, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="137"/>
+        <TextBox x:Name="PriceTextbox" HorizontalAlignment="Left" Height="32" Margin="147,98,0,0" TextWrapping="Wrap" Text="{Binding productprice, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="137" PreviewTextInput="PriceTextBoxInput"/>
         <Button x:Name="SubmitButton" Content="Termék feltöltése" HorizontalAlignment="Left" Height="34" Margin="147,183,0,0" VerticalAlignment="Top" Width="116" Click="SaveProductClick"/>
-        <TextBox x:Name="QuantityTextbox" HorizontalAlignment="Left" Height="32" Margin="147,130,0,0" TextWrapping="Wrap" Text="{Binding productquantity, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="137"/>
+        <TextBox x:Name="QuantityTextbox" HorizontalAlignment="Left" Height="32" Margin="147,130,0,0" TextWrapping="Wrap" Text="{Binding productquantity, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="137" PreviewTextInput="QuantityTextBoxInput"/>
         <Label x:Name="QuantityLabel" Content="Termék mennyisége:" HorizontalAlignment="Left" Height="27" Margin="10,135,0,0" VerticalAlignment="Top" Width="137"/>
 
     </Grid>

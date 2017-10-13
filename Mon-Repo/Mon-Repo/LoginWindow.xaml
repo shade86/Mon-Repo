@@ -22,7 +22,6 @@
             </Border.Background>
 
         </Border>
-        <Button x:Name="Db" Content="Db" HorizontalAlignment="Left" Height="36" Margin="118,254,0,0" VerticalAlignment="Top" Width="60" Click="DbClick" Grid.ColumnSpan="2"/>
 
         <Image HorizontalAlignment="Left" Height="53" Margin="124,56,0,0" VerticalAlignment="Top" Width="54" Source="Resources/signin.png" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="117,10,0,0" VerticalAlignment="Top" Width="23" Source="Resources/admin.png" MouseLeftButtonUp="AdminClick" Cursor="Hand" Grid.Column="1"/>

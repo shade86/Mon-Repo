@@ -74,14 +74,6 @@ namespace Mon_Repo
             }
                 else return;
         }
-
-        private void PurchasesClick(object sender, RoutedEventArgs e)
-        {
-            var _pvm = new PurchasesViewModel(_vm.AuthenticatedUser);
-            var pw = new PurchasedProducts() { DataContext = _pvm };
-            pw.ShowDialog();
-        }
-
         private void StatisticsClick(object sender, RoutedEventArgs e)
         {
             var user = _vm.AuthenticatedUser;
@@ -143,32 +135,8 @@ namespace Mon_Repo
                 };
                 form.ShowDialog();
                 if (vm.Validate())
-                    ((MainViewModel)DataContext).Products.Add(vm.Product);
-            
+                    ((MainViewModel)DataContext).Products.Add(vm.Product);           
         }
-
-        private void EditProductClick(object sender, MouseButtonEventArgs e)
-        {
-            var SelectedProduct = ((MainViewModel)DataContext).SelectedProduct;
-            if (SelectedProduct == null)
-            {
-                return;
-            }
-            var vm = new ProductFormViewModel
-
-            {
-                
-                IsEdit = true,
-                Product = ((MainViewModel)DataContext).SelectedProduct
-            };
-            var form = new ProductForm()
-            {
-                DataContext = vm
-            };
-            form.ShowDialog();
-
-        }
-
         private void DeleteProductClick(object sender, MouseButtonEventArgs e)
         {
             _vm.Delete();

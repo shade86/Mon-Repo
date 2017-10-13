@@ -18,6 +18,8 @@ namespace Mon_Repo
         public Product SelectedProduct { get; set; }
         public Product CartSelectedProduct { get; set; }
         public User AuthenticatedUser { get; set; }
+
+
         public MainViewModel()
         {
             Products = new ObservableCollection<Product>();
@@ -50,6 +52,18 @@ namespace Mon_Repo
         {
             var manager = new DataManager();
             manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
+            Products.Remove(SelectedProduct);
+        }
+
+        public void AddToProducts()
+        {
+            var pfvm = new ProductFormViewModel();
+                             Products.Add(new Product
+                             {
+                                 Name = pfvm.productname,
+                                 Quantity = pfvm.productquantity,
+                                 Price = pfvm.productprice
+                             });
         }
 
         public void Purchase()
@@ -158,7 +172,7 @@ namespace Mon_Repo
                 foreach (var item2 in Products)
                 { 
                 if (item.Name == item2.Name)
-                    item2.Quantity++;
+                    item2.Quantity += item.Quantity;
             }
                 AuthenticatedUser.ProductList.Clear();
             AuthenticatedUser.Money += sum;

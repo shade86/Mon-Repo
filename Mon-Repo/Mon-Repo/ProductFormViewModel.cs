@@ -15,10 +15,10 @@ namespace Mon_Repo
         public Product Product { get; set; }
         public bool Validate()
         {
-            return Product.Name != null &&
-                Product.Name.Length > 0 &&
-                Product.Price > -1 &&
-                Product.Quantity > 0;
+            return productname != null &&
+                productname.Length > 0 &&
+                productprice > -1 &&
+                productquantity > 0;
         }
         public bool IsEdit { get; set; }
 

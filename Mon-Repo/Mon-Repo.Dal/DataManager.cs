@@ -97,7 +97,9 @@ namespace Mon_Repo.Dal
                 Price = productprice
                 //BuyDate = Product.BuyDate
             });
+            
             _ctx.SaveChanges();
+
         }
 
         public void DbShow()
