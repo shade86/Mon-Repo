@@ -54,8 +54,7 @@ namespace Mon_Repo
             manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
             Products.Remove(SelectedProduct);
         }
-
-        public void AddToProducts()
+       public void AddToProducts()
         {
             var pfvm = new ProductFormViewModel();
                              Products.Add(new Product
@@ -65,6 +64,7 @@ namespace Mon_Repo
                                  Price = pfvm.productprice
                              });
         }
+ 
 
         public void Purchase()
         {

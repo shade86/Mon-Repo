@@ -22,16 +22,20 @@ namespace Mon_Repo
 
         public void Reg(string password1, string password2)
         {
-            if (password1 == password2)
-            {
+            if (password1 != password2)
+            { MessageBox.Show("Nem egyezik"); }
+            //if (password1 == password2)
+            else{
                 if (SignUpValidate())
                 {
                     password = password1;
                     var manager = new DataManager();
                     manager.Register(username, password);
+                    //MessageBox.Show("Sikeres regisztáció");
+
                 }
                 else
-                    MessageBox.Show("A beírt jelszavak nem egyeznek");
+                    MessageBox.Show("Nem megfelelő");
             }
         }
 

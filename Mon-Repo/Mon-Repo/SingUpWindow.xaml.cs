@@ -34,7 +34,9 @@ namespace Mon_Repo
             string password1 = SignUpPassword1.Password;
             string password2 = SignUpPassword2.Password;
             sw.Reg(password1, password2);
-
+            Close();
+            MainWindow mw = new MainWindow();
+            mw.ShowDialog();
         }
     }
 }

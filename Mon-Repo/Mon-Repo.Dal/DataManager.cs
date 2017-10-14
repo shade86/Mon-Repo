@@ -76,17 +76,23 @@ namespace Mon_Repo.Dal
         }
         public void Register(string username, string password)
         {
-            if (!_ctx.Users.Any(x => x.Username == username))
-		//throw new ArgumentException(nameof(username));
-
-            _ctx.Users.Add(new UserDbModel
-                    {
-                      Username = username,
-                      Password = password,
-                      Money = 1000
-                     });
+            if (_ctx.Users.Any(x => x.Username == username))
+            {
+                MessageBox.Show("A felhasználónév már létezik");
+                return;
+            }
+            //throw new ArgumentException(nameof(username));
+            else
+                _ctx.Users.Add(new UserDbModel
+                {
+                    Username = username,
+                    Password = password,
+                    Money = 1000
+                });
 
             _ctx.SaveChanges();
+            MessageBox.Show("Sikeres regisztráció");
+            
         }
         public void AddProductDb(string productname, int productquantity, int productprice)
         {

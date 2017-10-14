@@ -37,8 +37,9 @@ namespace Mon_Repo
                DataContext = lvm
             };*/
             lw.ShowDialog();
-            _vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
+            
             DataContext = _vm;
+            _vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
         }
         private void BuyProduct(object sender, MouseButtonEventArgs e)
         {
