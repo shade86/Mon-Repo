@@ -40,9 +40,8 @@ namespace Mon_Repo
                 ViewModel.productprice = int.Parse(PriceTextbox.Text);
                 ViewModel.productquantity = int.Parse(QuantityTextbox.Text);
                 manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
-                vm.AddToProducts();
                 Close();
-           
+                vm.AddToProducts();
             //   }
             //   else
             //   MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");

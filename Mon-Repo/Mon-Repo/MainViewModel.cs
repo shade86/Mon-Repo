@@ -18,10 +18,12 @@ namespace Mon_Repo
         public Product SelectedProduct { get; set; }
         public Product CartSelectedProduct { get; set; }
         public User AuthenticatedUser { get; set; }
+        
 
 
         public MainViewModel()
         {
+           
             Products = new ObservableCollection<Product>();
             //DB szerkesztés
             // var ctx = new Context();

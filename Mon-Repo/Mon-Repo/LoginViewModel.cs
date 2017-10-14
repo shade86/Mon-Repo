@@ -15,7 +15,8 @@ namespace Mon_Repo
         //public ObservableCollection<User> Users { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public User AuthenticatedUser { get; private set; }
+        public User AuthenticatedUser { get; set; }
+       
         public bool Login()
         {
             var manager = new DataManager();

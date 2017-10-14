@@ -8,3 +8,12 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\obj\Debug\Mon-RepoTests.csprojResolveAssemblyReference.cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\obj\Debug\Mon-RepoTests.dll
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\obj\Debug\Mon-RepoTests.pdb
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\Mon-RepoTests.dll.config
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\EntityFramework.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\System.Data.SQLite.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\EntityFramework.xml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-RepoTests\bin\Debug\System.Data.SQLite.xml

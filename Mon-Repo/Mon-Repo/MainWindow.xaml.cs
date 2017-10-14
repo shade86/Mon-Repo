@@ -25,7 +25,7 @@ namespace Mon_Repo
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel _vm = new MainViewModel();
+        public MainViewModel _vm;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,13 +33,18 @@ namespace Mon_Repo
             //  DataContext = new MainViewModel();
             // var lvm = new LoginViewModel();
             LoginWindow lw = new LoginWindow();
-          /*  {
-               DataContext = lvm
-            };*/
+            /*  {
+                 DataContext = lvm
+              };*/
             lw.ShowDialog();
-            
+            var lwm = new LoginViewModel();
+            _vm = new MainViewModel
+            {
+                AuthenticatedUser = lw.ViewModel.AuthenticatedUser
+        };
             DataContext = _vm;
-            _vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
+            //_vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
+            
         }
         private void BuyProduct(object sender, MouseButtonEventArgs e)
         {

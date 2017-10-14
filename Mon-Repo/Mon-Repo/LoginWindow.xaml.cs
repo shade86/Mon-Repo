@@ -25,7 +25,7 @@ namespace Mon_Repo
         public List<UserDbModel> Users { get; }
         AdminWindow aw = new AdminWindow();
         SingUpWindow sw = new SingUpWindow();
-        LoginViewModel ViewModel = new LoginViewModel();
+        public LoginViewModel ViewModel;
         DataManager manager = new DataManager();
         //KELL?????????????
         public string password { get; set; }
@@ -35,12 +35,13 @@ namespace Mon_Repo
             InitializeComponent();
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            ViewModel = new LoginViewModel();
             DataContext = ViewModel;
         }
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             ViewModel.password = PasswordTextBox.Password;
-            ViewModel.username = UserTextBox.Text;
+           // ViewModel.username = UserTextBox.Text;
            /* using (MD5 md5Hash = MD5.Create())
             {
                 ViewModel.password = LoginViewModel.GetMd5Hash(md5Hash, PasswordTextBox.Password);
