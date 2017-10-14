@@ -13,13 +13,39 @@ namespace Mon_Repo
         public int productquantity { get; set; }
         public int productprice { get; set; }
         public Product Product { get; set; }
+
+
+        public ProductFormViewModel(Product Product)
+        {
+            this.Product = Product;
+        }
+
+        public bool AddProduct()
+        {
+            var vm = new MainViewModel();
+            var manager = new DataManager();
+            if (Validate())
+            {
+                if  (manager.AddProductDb(Product.Name, Product.Price, Product.Quantity))
+                {
+                    vm.Products.Add(Product);
+                    return true;
+                }
+                    
+                return false;
+
+            }
+            else return false;
+        }
         public bool Validate()
         {
-            return productname != null &&
-                productname.Length > 0 &&
-                productprice > -1 &&
-                productquantity > 0;
+            return Product.Name != null &&
+                Product.Name.Length > 0 &&
+                Product.Price > -1 &&
+                Product.Quantity > 0;
         }
+
+
         public bool IsEdit { get; set; }
 
         public bool OnWindowClosing()

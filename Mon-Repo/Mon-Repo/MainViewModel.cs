@@ -18,12 +18,23 @@ namespace Mon_Repo
         public Product SelectedProduct { get; set; }
         public Product CartSelectedProduct { get; set; }
         public User AuthenticatedUser { get; set; }
+        public int _sumcart { get; set; }
+
         
 
+        public void SumCart()
+        {
+            sum = 0;
+            foreach (var item in AuthenticatedUser.ProductList)
+            {
+                sum += (item.Price * item.Quantity);
+            }
+            _sumcart = sum;
+        }
 
         public MainViewModel()
         {
-           
+            
             Products = new ObservableCollection<Product>();
             //DB szerkesztés
             // var ctx = new Context();
@@ -56,17 +67,16 @@ namespace Mon_Repo
             manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
             Products.Remove(SelectedProduct);
         }
-       public void AddToProducts()
+        public void AddToProducts(string productname, int productprice, int productquantity)
         {
-            var pfvm = new ProductFormViewModel();
-                             Products.Add(new Product
-                             {
-                                 Name = pfvm.productname,
-                                 Quantity = pfvm.productquantity,
-                                 Price = pfvm.productprice
-                             });
+            Products.Add(new Product
+            {
+                Name = productname,
+                Quantity = productquantity,
+                Price = productprice
+            });
         }
- 
+
 
         public void Purchase()
         {

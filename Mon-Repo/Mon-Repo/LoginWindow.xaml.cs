@@ -129,5 +129,11 @@ namespace Mon_Repo
             aw.ShowDialog();
 
         }
+
+        private void Drag(object sender, MouseButtonEventArgs e)
+        {
+          //  if (e.ChangedButton == MouseButton.Left)
+            //    DragMove();
+        }
     }
 }

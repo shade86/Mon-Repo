@@ -45,6 +45,7 @@ namespace Mon_Repo
             DataContext = _vm;
             //_vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
             
+
         }
         private void BuyProduct(object sender, MouseButtonEventArgs e)
         {
@@ -54,8 +55,13 @@ namespace Mon_Repo
                     MessageBox.Show("Nincs elég pénz!");
                 else if (_vm.SelectedProduct.Quantity == 0)
                     MessageBox.Show("A termék elfogyott");
-                else _vm.AddCart();
+                else
+                {
+                    _vm.AddCart();
+                    _vm.SumCart();
+                }
             }
+            
         }
 
         private void CartDoubleClick(object sender, MouseButtonEventArgs e)
@@ -130,18 +136,23 @@ namespace Mon_Repo
 
         private void NewProductClick(object sender, MouseButtonEventArgs e)
         {
-            
-                var vm = new ProductFormViewModel
-                {
-                    Product = new Product()
-                };
-                var form = new ProductForm()
-                {
-                    DataContext = vm
-                };
-                form.ShowDialog();
-                if (vm.Validate())
-                    ((MainViewModel)DataContext).Products.Add(vm.Product);           
+
+            //var vm = new ProductFormViewModel
+            //{
+            //    Product = new Product()
+            //};
+            //var form = new ProductForm()
+            //{
+            //    DataContext = vm
+            //};
+            //form.ShowDialog();
+            //if (vm.Validate())
+            //_vm.Products.Add(vm.Product);   
+
+            ProductFormViewModel pfvm = new ProductFormViewModel(new Product());
+            ProductForm pf = new ProductForm { DataContext = pfvm };
+            pf.ShowDialog();
+                    
         }
         private void DeleteProductClick(object sender, MouseButtonEventArgs e)
         {

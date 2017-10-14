@@ -22,7 +22,7 @@ namespace Mon_Repo
     /// </summary>
     public partial class ProductForm : Window
     {
-        ProductFormViewModel ViewModel = new ProductFormViewModel();
+        
         public ProductForm()
         {
             InitializeComponent();
@@ -32,20 +32,26 @@ namespace Mon_Repo
         DataManager manager = new DataManager();
         private void SaveProductClick(object sender, RoutedEventArgs e)
         {
-            var vm = new MainViewModel();
-            var pfvm = new ProductFormViewModel();
+            var pfvm = (ProductFormViewModel)DataContext;
+            if (!pfvm.AddProduct())
+                MessageBox.Show("hiba");
+            else
+                MessageBox.Show("sikeres mentés");
+            Close();
+
            // if (pfvm.Validate() == true)
           //  {
-                ViewModel.productname = NameTextbox.Text;
-                ViewModel.productprice = int.Parse(PriceTextbox.Text);
-                ViewModel.productquantity = int.Parse(QuantityTextbox.Text);
-                manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
-                Close();
-                vm.AddToProducts();
+                //ViewModel.productname = NameTextbox.Text;
+                //ViewModel.productprice = int.Parse(PriceTextbox.Text);
+                //ViewModel.productquantity = int.Parse(QuantityTextbox.Text);
+                //manager.AddProductDb(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
+                //Close();
+                //vm.AddToProducts(ViewModel.productname, ViewModel.productprice, ViewModel.productquantity);
             //   }
             //   else
             //   MessageBox.Show("Hiba: A termék neve legalább 4 karakter kell hogy legyen, mennyisége és az ára legalább 0!");
         }
+
 
         private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {

@@ -94,7 +94,7 @@ namespace Mon_Repo.Dal
             MessageBox.Show("Sikeres regisztráció");
             
         }
-        public void AddProductDb(string productname, int productquantity, int productprice)
+        public bool AddProductDb(string productname, int productquantity, int productprice)
         {
             _ctx.ProductList.Add(new ProductDbModel
             {
@@ -105,7 +105,7 @@ namespace Mon_Repo.Dal
             });
             
             _ctx.SaveChanges();
-
+            return true;
         }
 
         public void DbShow()

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Repo"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="300" Width="300" Closing="LoginWindowClosing" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+        Title="LoginWindow" Height="300" Width="300" Closing="LoginWindowClosing" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent" WindowStyle="None" MouseDown="Drag">
 
     <Grid>
         <Grid.ColumnDefinitions>
