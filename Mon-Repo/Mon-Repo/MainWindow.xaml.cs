@@ -89,7 +89,8 @@ namespace Mon_Repo
         private void StatisticsClick(object sender, RoutedEventArgs e)
         {
             var user = _vm.AuthenticatedUser;
-            MessageBox.Show($"Össz. költség: {Statistics.SumSpent(user.ProductList)}Ft");
+            MessageBox.Show($"Össz. költség: {Statistics.SumSpent(user.ProductList)}Ft", $"Össz. mennyiség: {Statistics.SumQuantity(user.ProductList)}");
+           
         }
 
         private void PurchaseClick(object sender, RoutedEventArgs e)
@@ -157,7 +158,7 @@ namespace Mon_Repo
         private void DeleteProductClick(object sender, MouseButtonEventArgs e)
         {
             _vm.Delete();
-            MessageBox.Show("Termék törölve");
+            
         }
         private void CartSortABCSelected(object sender, RoutedEventArgs e)
         {

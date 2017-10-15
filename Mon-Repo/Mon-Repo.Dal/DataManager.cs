@@ -12,38 +12,8 @@ namespace Mon_Repo.Dal
         readonly Context _ctx; 
         public DataManager()
         {
-            
-            _ctx = new Context();
-              
-           /* if (!_ctx.Users.Any(x => x.Username == "asdf"))
-            {
-                _ctx.Users.Add(new UserDbModel
-                {
-                    Username = "asdf",
-                    Password = "asdf",
-                    Money = 1000
-                }
-                    );
-                _ctx.SaveChanges();
-            }*/
-     
+            _ctx = new Context();     
         }
-        //public bool Register(string username, string password)
-        //{
-        //    if (_ctx.Users.Any(x => x.Username == username))
-        //        return false;
-        //    else
-        //    {
-        //        _ctx.Users.Add(new UserDbModel
-        //        {
-        //            Username = username,
-        //            Password = password,
-        //            Money = 1000
-        //        });
-        //        _ctx.SaveChanges();
-        //    }   return true;
-        //}
-
         public void DeleteProduct(string productname, int productprice)
         {
             foreach (var product in _ctx.ProductList)
@@ -55,7 +25,6 @@ namespace Mon_Repo.Dal
             }
             _ctx.SaveChanges();
         }
-
         public void Buy(string productname, int productquantity, int productprice, string username)
         {
             int Sumprice = 0;
@@ -81,18 +50,15 @@ namespace Mon_Repo.Dal
                 MessageBox.Show("A felhasználónév már létezik");
                 return;
             }
-            //throw new ArgumentException(nameof(username));
             else
                 _ctx.Users.Add(new UserDbModel
                 {
                     Username = username,
                     Password = password,
-                    Money = 1000
+                    Money = 10000
                 });
-
             _ctx.SaveChanges();
             MessageBox.Show("Sikeres regisztráció");
-            
         }
         public bool AddProductDb(string productname, int productquantity, int productprice)
         {
@@ -101,13 +67,10 @@ namespace Mon_Repo.Dal
                 Name = productname,
                 Quantity = productquantity,
                 Price = productprice
-                //BuyDate = Product.BuyDate
             });
-            
             _ctx.SaveChanges();
             return true;
         }
-
         public void DbShow()
         {
             foreach (var item in _ctx.Users)
@@ -128,26 +91,21 @@ namespace Mon_Repo.Dal
         {
             try
             {
-                return _ctx.Users.SingleOrDefault(x => x.Username == username && x.Password == password); //singleordefault: csak egy érték felel meg a kritériumoknak 
-
+                return _ctx.Users.SingleOrDefault(x => x.Username == username && x.Password == password);
             }
             catch (InvalidOperationException)
             {
-
                 return null;
             }
         }
-
         public ProductDbModel GetProducts(string productname, int productquantity, int productprice)
         {
             try
             {
-                return _ctx.ProductList.SingleOrDefault(x => x.Name == productname && x.Quantity == productquantity && x.Price == productprice); //singleordefault: csak egy érték felel meg a kritériumoknak 
-
+                return _ctx.ProductList.SingleOrDefault(x => x.Name == productname && x.Quantity == productquantity && x.Price == productprice);
             }
             catch (InvalidOperationException)
             {
-
                 return null;
             }
         }

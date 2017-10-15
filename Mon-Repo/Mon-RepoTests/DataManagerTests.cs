@@ -17,10 +17,9 @@ namespace Mon_RepoTests
                 bool result = manager.AddProductDb("Teszt_termék", 10, 10);
             Assert.IsTrue(result);
         }
-
         [TestMethod]
         public void RegisterUserAlreadyExists()
-            //asdf felhasználónak létezni kell a "sikeres" messageboxhoz
+            //asdf felhasználónak létezni kell a megfelelő messageboxhoz
         {
             var manager = new Mon_Repo.Dal.DataManager();
             string username = "asdf";
@@ -28,12 +27,20 @@ namespace Mon_RepoTests
         }
 
         [TestMethod]
-        public void RegisterUserDoesNotExists()
+        public void RegisterUserDoesNotExist()
         {
             var manager = new Mon_Repo.Dal.DataManager();
             string username = R.Next(0, 100000).ToString();
             string password = R.Next(0, 100000).ToString();
             manager.Register(username, password);
+        }
+        [TestMethod]
+        public void Delete_No_Choice()
+        {
+            var vm = new MainViewModel();
+            vm.SelectedProduct = null;
+            vm.Delete();
+            Assert.IsNull(vm.SelectedProduct);
         }
     }
 }

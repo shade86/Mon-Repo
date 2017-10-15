@@ -64,8 +64,18 @@ namespace Mon_Repo
         public void Delete()
         {
             var manager = new DataManager();
-            manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
-            Products.Remove(SelectedProduct);
+            if (SelectedProduct == null)
+            {
+                MessageBox.Show("Nincs termék kiválasztva!");
+                return;
+            }
+            else
+            {
+                manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
+                Products.Remove(SelectedProduct);
+                MessageBox.Show("Termék törölve!");
+            }
+            
         }
         public void AddToProducts(string productname, int productprice, int productquantity)
         {

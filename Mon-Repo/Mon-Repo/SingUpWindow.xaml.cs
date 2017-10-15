@@ -38,5 +38,10 @@ namespace Mon_Repo
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
         }
+
+        private void BackButtonClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

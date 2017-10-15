@@ -27,9 +27,7 @@ namespace Mon_Repo
         SingUpWindow sw = new SingUpWindow();
         public LoginViewModel ViewModel;
         DataManager manager = new DataManager();
-        //KELL?????????????
         public string password { get; set; }
-        
         public LoginWindow()
         {
             InitializeComponent();
@@ -41,65 +39,34 @@ namespace Mon_Repo
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             ViewModel.password = PasswordTextBox.Password;
-           // ViewModel.username = UserTextBox.Text;
-           /* using (MD5 md5Hash = MD5.Create())
-            {
-                ViewModel.password = LoginViewModel.GetMd5Hash(md5Hash, PasswordTextBox.Password);
-            }*/
             if (ViewModel.Login())
                 Close();
             else
-                MessageBox.Show("HIBA");
+                MessageBox.Show("Hibás felhasználónév vagy jelszó!");
         }
-
         private void LoginWindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (!ViewModel.Login())
                 e.Cancel = true;
         }
-
         private void ExitClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult _questionResult = MessageBox.Show("Biztosan kilép a programból?", "Kilépés", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_questionResult == MessageBoxResult.Yes)
-            {
-            System.Windows.Application.Current.Shutdown();
-            }
-            else return;
-            
+                {
+                System.Windows.Application.Current.Shutdown();
+                }
+                    else return;
         }
-        //BUTTON Animáció
-        private void ExitMouseEnter(object sender, MouseEventArgs e)
-        {
-     /*    myScaleTransform.ScaleX = 2;
-            ExitButton.Content = "Quit";
-            ExitButton.FontSize =12;
-         myScaleTransform.ScaleY = 1;*/
-        }
-
-        //BUTTON Animáció
-        private void ExitMouseLeave(object sender, MouseEventArgs e)
-        {
-      /*     myScaleTransform.ScaleX = 1;
-           myScaleTransform.ScaleY = 1;*/
-        }
-
-        private void UserTextChange(object sender, RoutedEventArgs e)
-        {
-          //  UserNameTextBox.Text = { Binding LoginName}
-        }
-
         private void PasswordTextboxClick(object sender, RoutedEventArgs e)
         {
             PasswordTextBox.Password = "";
         }
-
         private void PasswordTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-           if (PasswordTextBox.Password == "")
+            if (PasswordTextBox.Password == "")
             PasswordTextBox.Password = "Jelszó";
         }
-
         private void HandleEsc(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
@@ -109,31 +76,23 @@ namespace Mon_Repo
                 {
                     System.Windows.Application.Current.Shutdown();
                 }
-                else return;
+                    else return;
             }
-        }
-        private void DbClick(object sender, RoutedEventArgs e)
-        {
-            //manager.Register(username, password);
-            manager.DbShow();
         }
         private void NewUserClick(object sender, RoutedEventArgs e)
         {
-
             sw.ShowDialog();
             DataContext = new SignUpViewModel();
         }
-
         private void AdminClick(object sender, MouseButtonEventArgs e)
+            //HIDDEN OBJECT CLICK
         {
             aw.ShowDialog();
-
         }
-
         private void Drag(object sender, MouseButtonEventArgs e)
         {
-          //  if (e.ChangedButton == MouseButton.Left)
-            //    DragMove();
+        if (e.ChangedButton == MouseButton.Left)
+        DragMove();
         }
     }
 }

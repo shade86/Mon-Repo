@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mon_Repo"
         mc:Ignorable="d"
-        Title="SingUpWindow" Height="331.5" Width="480">
+        Title="Új felhasználó regisztrálása" Height="331.5" Width="480">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7F6CFF" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label Content="Felhasználónév:" HorizontalAlignment="Left" Height="27" Margin="44,75,0,0" VerticalAlignment="Top" Width="154"/>
         <Label Content="Jelszó:" HorizontalAlignment="Left" Height="27" Margin="44,107,0,0" VerticalAlignment="Top" Width="154"/>
         <Label Content="Jelszó megerősítése:" HorizontalAlignment="Left" Height="27" Margin="44,139,0,0" VerticalAlignment="Top" Width="154"/>
@@ -14,6 +20,7 @@
         <PasswordBox x:Name="SignUpPassword1" HorizontalAlignment="Left" Height="27" Margin="198,107,0,0" VerticalAlignment="Top" Width="169"/>
         <PasswordBox x:Name="SignUpPassword2" HorizontalAlignment="Left" Height="27" Margin="198,139,0,0" VerticalAlignment="Top" Width="169"/>
         <Button x:Name="SignUpButton" Content="Regisztráció" HorizontalAlignment="Left" Height="26" Margin="198,188,0,0" VerticalAlignment="Top" Width="100" Click="SignUpClick"/>
+        <Button Content="Vissza" HorizontalAlignment="Left" Margin="198,235,0,0" VerticalAlignment="Top" Width="75" Click="BackButtonClick"/>
 
     </Grid>
 </Window>
