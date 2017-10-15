@@ -9,21 +9,17 @@ using Mon_Repo.Dal;
 namespace Mon_Repo
 {
     public class User : BaseModel
-    
  {
         public User(UserDbModel user)
         {
             Username = user.Username;
             Password = user.Password;
             Money = user.Money;
-
         }
-
         public ObservableCollection<Product> ProductList { get; set; } = new ObservableCollection<Product>();
         public ObservableCollection<Product> PurchasedProductsList { get; set; } = new ObservableCollection<Product>();
    public string Password { get; set; }
         public string Username { get; set; }
-
         int _money;
         public int Money
         {

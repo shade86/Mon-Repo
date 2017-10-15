@@ -15,32 +15,23 @@ namespace Mon_Repo
 
         public bool SignUpValidate()
         {
-
             return username != null &&
                 username.Length > 0;    
         }
-
         public void Reg(string password1, string password2)
         {
             if (password1 != password2)
-            { MessageBox.Show("Nem egyezik"); }
-            //if (password1 == password2)
+            { MessageBox.Show("A megadott jelszavak nem egyeznek"); }
             else{
                 if (SignUpValidate())
                 {
                     password = password1;
                     var manager = new DataManager();
                     manager.Register(username, password);
-                    //MessageBox.Show("Sikeres regisztáció");
-
                 }
                 else
-                    MessageBox.Show("Nem megfelelő");
+                    MessageBox.Show("Nem megfelelő formátum!");
             }
         }
-
-
-       
     }
-
 }

@@ -5,7 +5,6 @@ C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Re
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.pdb
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\Mon-Repo.Dal.dll
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\Mon-Repo.Dal.pdb
-C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.csprojResolveAssemblyReference.cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.dll
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon-Repo.Dal.pdb
 C:\Users\Tamás\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\Mon-Repo.Dal.dll.config
@@ -26,3 +25,6 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\EntityFramework.xml
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\bin\Debug\System.Data.SQLite.xml
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.Migrations.InitialCreate.resources
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.csproj.GenerateResource.Cache
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.Migrations.Update1.resources

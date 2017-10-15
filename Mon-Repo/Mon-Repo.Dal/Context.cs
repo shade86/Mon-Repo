@@ -24,7 +24,6 @@ namespace Mon_Repo.Dal
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<ProductDbModel> ProductList { get; set; }
         public virtual DbSet<UserDbModel> Users { get; set; }
-        public virtual DbSet<PurchaseDbModel> Purchases { get; set; }
     }
 
     //public class MyEntity

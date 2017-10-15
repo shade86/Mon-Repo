@@ -18,8 +18,7 @@ namespace Mon_Repo
     /// <summary>
     /// Interaction logic for SingUpWindow.xaml
     /// </summary>
-    public partial class SingUpWindow : Window
-        
+    public partial class SingUpWindow : Window  
     {
         SignUpViewModel sw = new SignUpViewModel();
         DataManager manager = new DataManager();
@@ -28,7 +27,6 @@ namespace Mon_Repo
             DataContext = sw;
             InitializeComponent();
         }
-
         private void SignUpClick(object sender, RoutedEventArgs e)
         {
             string password1 = SignUpPassword1.Password;
@@ -38,7 +36,6 @@ namespace Mon_Repo
             MainWindow mw = new MainWindow();
             mw.ShowDialog();
         }
-
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
             Close();

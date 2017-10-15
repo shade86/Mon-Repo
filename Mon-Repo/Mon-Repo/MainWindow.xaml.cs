@@ -30,12 +30,7 @@ namespace Mon_Repo
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            //  DataContext = new MainViewModel();
-            // var lvm = new LoginViewModel();
             LoginWindow lw = new LoginWindow();
-            /*  {
-                 DataContext = lvm
-              };*/
             lw.ShowDialog();
             var lwm = new LoginViewModel();
             _vm = new MainViewModel
@@ -43,8 +38,6 @@ namespace Mon_Repo
                 AuthenticatedUser = lw.ViewModel.AuthenticatedUser
         };
             DataContext = _vm;
-            //_vm.AuthenticatedUser = ((LoginViewModel)lw.DataContext).AuthenticatedUser;
-            
 
         }
         private void BuyProduct(object sender, MouseButtonEventArgs e)

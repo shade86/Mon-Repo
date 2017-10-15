@@ -109,9 +109,5 @@ namespace Mon_Repo.Dal
                 return null;
             }
         }
-        public IEnumerable<PurchaseDbModel> GetPurchasesOfUser(string username)
-        {
-            return _ctx.Purchases.Where(x => x.User.Username == username);
-        }
     }
 }

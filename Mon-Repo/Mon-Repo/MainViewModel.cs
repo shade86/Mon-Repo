@@ -14,14 +14,10 @@ namespace Mon_Repo
     {
         public ObservableCollection<User>Users { get; set; }
         public ObservableCollection<Product> Products { get; set; }
-        public ObservableCollection<Purchase> Purchases { get; set; }
         public Product SelectedProduct { get; set; }
         public Product CartSelectedProduct { get; set; }
         public User AuthenticatedUser { get; set; }
         public int _sumcart { get; set; }
-
-        
-
         public void SumCart()
         {
             sum = 0;
@@ -31,36 +27,20 @@ namespace Mon_Repo
             }
             _sumcart = sum;
         }
-
         public MainViewModel()
-        {
-            
+        {  
             Products = new ObservableCollection<Product>();
-            //DB szerkesztés
-            // var ctx = new Context();
             var manager = new DataManager();
             foreach (var product in manager.GetProductList())
             {
                 Products.Add(new Product(product));
             }
-
-
             Users = new ObservableCollection<User>();
             foreach (var user in manager.GetUserList())
             {
                 Users.Add(new User(user));
             }
-
-
-            //TODO purchases
-            /*Purchases = new ObservableCollection<Purchase>();
-            foreach (var purchase in manager.GetPurchasesOfUser())
-            {
-                Purchases.Add(new Purchase(purchase));
-            }*/
         }
-       
-
         public void Delete()
         {
             var manager = new DataManager();
@@ -74,8 +54,7 @@ namespace Mon_Repo
                 manager.DeleteProduct(SelectedProduct.Name, SelectedProduct.Price);
                 Products.Remove(SelectedProduct);
                 MessageBox.Show("Termék törölve!");
-            }
-            
+            } 
         }
         public void AddToProducts(string productname, int productprice, int productquantity)
         {
@@ -86,27 +65,22 @@ namespace Mon_Repo
                 Price = productprice
             });
         }
-
-
         public void Purchase()
         {
             var manager = new DataManager();
             foreach (var product in AuthenticatedUser.ProductList)
             {
                 manager.Buy(product.Name, product.Quantity, product.Price, AuthenticatedUser.Username);
-               
             }
             AuthenticatedUser.ProductList.Clear();
         }
-
         public int sum = 0;
-
         public string AddCart()
         {
             if (SelectedProduct.Price > AuthenticatedUser.Money)
-                return "Nincs elég pénz";
+                return "A vásárláshoz nem áll rendelkezésre elég pénz";
             if (SelectedProduct.Quantity == 0)
-                return "Nincs elég termék";
+                return "A kiválasztott termék elfogyott";
             var product = FindProduct(SelectedProduct.Name);
             if (product == null)
             {
@@ -128,7 +102,6 @@ namespace Mon_Repo
             SelectedProduct.Quantity--;
             return null;
         }
-
         Product FindProduct(string name)
         {
             foreach (var product in AuthenticatedUser.ProductList)
@@ -160,11 +133,9 @@ namespace Mon_Repo
                 }
             return null;
         }
-
         public void PurchaseFromCart()
         {
             if (AuthenticatedUser.Money > Statistics.SumSpent(AuthenticatedUser.ProductList))
-
                 foreach (var item in AuthenticatedUser.ProductList)
                 {
                     if (item.Name != null)
@@ -175,16 +146,12 @@ namespace Mon_Repo
                             Price = item.Price,
                             Quantity = item.Quantity,
                             BuyDate = item.BuyDate
-
                         });
                     }
                 }
             else{
-                MessageBox.Show($"Nincs elég pénz a művelet végrehajtásához!");
                 return;
             }
-            
-           
             AuthenticatedUser.Money -= Statistics.SumSpent(AuthenticatedUser.ProductList);
             AuthenticatedUser.ProductList.Clear();
         }
@@ -211,8 +178,6 @@ namespace Mon_Repo
             AuthenticatedUser.ProductList.Clear();
             sum = 0;
         }
-
-
         public void ListOrderABC()
         {
             var list = Products.Cast<Product>().OrderBy(item => item.Name).ToList();
@@ -258,10 +223,6 @@ namespace Mon_Repo
                 Products.Add(product);
             }
         }
-
-
-
-
         public void CartListOrderABC()
         {
             var list = AuthenticatedUser.ProductList.Cast<Product>().OrderBy(item => item.Name).ToList();

@@ -86,14 +86,6 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Purchase.cs" />
-    <Compile Include="PurchasedProducts.xaml.cs">
-      <DependentUpon>PurchasedProducts.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PurchasesViewModel.cs" />
-    <Compile Include="PurchasesWindow.xaml.cs">
-      <DependentUpon>PurchasesWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SignUpViewModel.cs" />
     <Compile Include="SingUpWindow.xaml.cs">
       <DependentUpon>SingUpWindow.xaml</DependentUpon>
@@ -123,14 +115,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProductForm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PurchasedProducts.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PurchasesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
