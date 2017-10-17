@@ -28,3 +28,4 @@ C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.Migrations.InitialCreate.resources
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.csproj.GenerateResource.Cache
 C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.Migrations.Update1.resources
+C:\Users\Gabi és Tomi\Documents\GitHub\Mon-Repo\Mon-Repo\Mon-Repo\Mon-Repo.Dal\obj\Debug\Mon_Repo.Dal.csprojResolveAssemblyReference.cache
